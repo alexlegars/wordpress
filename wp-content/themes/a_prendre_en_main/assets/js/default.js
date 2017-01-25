@@ -39,53 +39,53 @@ function nav(){
   });
 
   //Fixe
-  jQuery(document).scroll(function() {
-    var scrollTop          = jQuery(window).scrollTop();
-    var headerHeight       = jQuery('.header').height();
-    var associationTop  = jQuery('.association').offset().top;
-
-    if (scrollTop >= headerHeight){
-      jQuery('.header').css({
-        'position'  : 'fixed',
-        'top'       : 0,
-        'width'     : "97%"
-      });
-    } else{
-      jQuery('.header').css({
-        'position'  : 'static',
-        'width'     : "100%"
-      });
-    }
-
-    if(scrollTop >= associationTop){
-      jQuery('.header').css({
-        'background-color'  : '#fff'
-      });
-
-      jQuery('.header a, .header .content-logo p').css({
-        'color'             : '#C6C6C6'
-      });
-
-      jQuery('.header li.don a').css({
-        'color'   : '#fff'
-      });
-
-      jQuery('.header .logo').attr('src', '../assets/images/logoGrey.svg');
-    } else {
-      jQuery('.header').css({
-        'background-color'  : '#3ca968'
-      });
-
-      jQuery('.header a, .header .content-logo p').css({
-        'color'             : '#fff'
-      });
-
-      jQuery('.header .logo').attr('src', '../assets/images/logo.svg');
-
-    }
-
-
-  });
+  // jQuery(window).scroll(function() {
+  //   var scrollTop          = jQuery(window).scrollTop();
+  //   var headerHeight       = jQuery('.header').height();
+  //   var associationTop  = jQuery('.association').offset().top;
+  //
+  //   if (scrollTop >= headerHeight){
+  //     jQuery('.header').css({
+  //       'position'  : 'fixed',
+  //       'top'       : 0,
+  //       'width'     : "97%"
+  //     });
+  //   } else{
+  //     jQuery('.header').css({
+  //       'position'  : 'static',
+  //       'width'     : "100%"
+  //     });
+  //   }
+  //
+  //   if(scrollTop >= associationTop){
+  //     jQuery('.header').css({
+  //       'background-color'  : '#fff'
+  //     });
+  //
+  //     jQuery('.header a, .header .content-logo p').css({
+  //       'color'             : '#C6C6C6'
+  //     });
+  //
+  //     jQuery('.header li.don a').css({
+  //       'color'   : '#fff'
+  //     });
+  //
+  //     jQuery('.header .logo').attr('src', '/assets/images/logoGrey.svg');
+  //   } else {
+  //     jQuery('.header').css({
+  //       'background-color'  : '#3ca968'
+  //     });
+  //
+  //     jQuery('.header a, .header .content-logo p').css({
+  //       'color'             : '#fff'
+  //     });
+  //
+  //     jQuery('.header .logo').attr('src', '<?php echo get_stylesheet_directory_uri() ?>/assets/images/logo.svg');
+  //
+  //   }
+  //
+  //
+  // });
 
 
 }

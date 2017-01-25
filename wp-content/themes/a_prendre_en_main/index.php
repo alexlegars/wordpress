@@ -8,39 +8,39 @@
 
 <div class="content">
      <!--HEADER-->
-     <!--<div class="header cf">-->
+     <div class="header cf">
 
-     <!--BURGER-->
-     <!-- <div class="burgerMenu">
-       <ul>
-         <li><a href="#area1">Accueil</a></li>
-         <li><a href="#area2">Participer au financement</a></li>
-         <li><a href="#area3">Plus d'infos</a></li>
-         <li><a href="#area4">L'équipe</a></li>
-         <li><a href="#area5">Dernières actualités</a></li>
-         <li><a href="#area6">Nos partenaires</a></li>
-         <li><a href="#area7">Nous contacter</a></li>
-       </ul>
+          <!--BURGER-->
+          <!-- <div class="burgerMenu">
+            <ul>
+              <li><a href="#area1">Accueil</a></li>
+              <li><a href="#area2">Participer au financement</a></li>
+              <li><a href="#area3">Plus d'infos</a></li>
+              <li><a href="#area4">L'équipe</a></li>
+              <li><a href="#area5">Dernières actualités</a></li>
+              <li><a href="#area6">Nos partenaires</a></li>
+              <li><a href="#area7">Nous contacter</a></li>
+            </ul>
+          </div>
+          <div class="iconBurger">
+            <div class="one"></div>
+            <div class="two"></div>
+            <div class="three"></div>
+          </div>-->
+          <div class="content-logo cf">
+<!--               <img src="--><?php //echo get_stylesheet_directory_uri() ?><!--/assets/css/images/logo.svg" alt="" class="logo">-->
+               <p>À Prendre en main</p>
+          </div>
+          <nav>
+               <ul class="cf">
+                    <li><a href="#area2">Qui sommes-nous ?</a></li>
+                    <li><a href="#area4">Notre équipe</a></li>
+                    <li><a href="#area5">Actualités</a></li>
+                    <li><a href="#area6">Contact</a></li>
+                    <li class="don"><a href="#area3">Faire un don</a></li>
+               </ul>
+          </nav>
      </div>
-     <div class="iconBurger">
-       <div class="one"></div>
-       <div class="two"></div>
-       <div class="three"></div>
-     </div>-->
-     <div class="content-logo cf">
-          <img src="assets/css/images/logo.svg" alt="" class="logo">
-          <p>À Prendre en main</p>
-     </div>
-     <nav>
-          <ul class="cf">
-               <li><a href="#area2">Qui sommes-nous ?</a></li>
-               <li><a href="#area4">Notre équipe</a></li>
-               <li><a href="#area5">Actualités</a></li>
-               <li><a href="#area6">Contact</a></li>
-               <li class="don"><a href="#area3">Faire un don</a></li>
-          </ul>
-     </nav>
-
 
 <!--PARALLAXE-->
 <div class="parallaxe" id="area1">
@@ -55,7 +55,7 @@
                <button class="btnBleu">Psst, par ici</button>
           </div>
           <div class="content-img">
-               <img src="assets/css/images/perso-visible.png" alt="">
+               <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/css/images/perso-visible.png" alt="">
           </div>
      </div>
      <div class="cache"></div>
@@ -109,159 +109,32 @@
      <div class="content-equipe">
           <p class="title"><span>Grâce à eux,</span> <br> l'association existe</p>
           <ul class="sliderEquipe">
+              <?php
+              $args = array(
+                  'post_type'      => 'team',
+                  'post_status'    => 'publish',
+              );
+              $actus = new WP_Query($args);
+
+              ?>
+
+              <?php while ($actus->have_posts()) : $actus->the_post(); ?>
                <li class="cf">
                     <div class="left">
-                         <img src="assets/css/images/imgEquipe.jpg" alt="">
+                         <img src="<?php the_post_thumbnail_url() ?>" alt="">
                     </div>
                     <div class="right">
                          <div class="textblock">
                               <div class="leftBorder">
-                                   <p class="name">Annaëlle</p>
-                                   <p class="role">Chargée de la communication</p>
-                                   <p class="parcours">Elle est en 1ère année universaite à Sciences Po Paris</p>
+                                   <p class="name"><?php the_title() ?></p>
+                                   <p class="role"><?php the_field('role') ?></p>
+                                   <p class="parcours"><?php the_field('parcours') ?></p>
                               </div>
-                              <p class="participation">
-                                   Le choix de participer au projet d’A-prendre en main a été une évidence, car depuis longtemps l’intérêt d’Annaëlle est de s’engager dans des initiatives associatives.  Chargée de développer la communication (réseaux sociaux, plaquettes de communication, etc) afin que l’association puisse être connue et que nos projets aboutissent.
-                              </p>
+                              <p class="participation"><?php the_content() ?></p>
                          </div>
                     </div>
                </li>
-               <li class="cf">
-                    <div class="left">
-                         <img src="assets/css/images/imgEquipe2.jpg" alt="">
-                    </div>
-                    <div class="right">
-                         <div class="textblock">
-                              <div class="leftBorder">
-                                   <p class="name">Annaëlle</p>
-                                   <p class="role">Chargée de la communication</p>
-                                   <p class="parcours">Elle est en 1ère année universaite à Sciences Po Paris</p>
-                              </div>
-                              <p class="participation">
-                                   Le choix de participer au projet d’A-prendre en main a été une évidence, car depuis longtemps l’intérêt d’Annaëlle est de s’engager dans des initiatives associatives.  Chargée de développer la communication (réseaux sociaux, plaquettes de communication, etc) afin que l’association puisse être connue et que nos projets aboutissent.
-                              </p>
-                         </div>
-                    </div>
-               </li>
-               <li class="cf">
-                    <div class="left">
-                         <img src="assets/css/images/imgEquipe2.jpg" alt="">
-                    </div>
-                    <div class="right">
-                         <div class="textblock">
-                              <div class="leftBorder">
-                                   <p class="name">Annaëlle</p>
-                                   <p class="role">Chargée de la communication</p>
-                                   <p class="parcours">Elle est en 1ère année universaite à Sciences Po Paris</p>
-                              </div>
-                              <p class="participation">
-                                   Le choix de participer au projet d’A-prendre en main a été une évidence, car depuis longtemps l’intérêt d’Annaëlle est de s’engager dans des initiatives associatives.  Chargée de développer la communication (réseaux sociaux, plaquettes de communication, etc) afin que l’association puisse être connue et que nos projets aboutissent.
-                              </p>
-                         </div>
-                    </div>
-               </li>
-               <li class="cf">
-                    <div class="left">
-                         <img src="assets/css/images/imgEquipe2.jpg" alt="">
-                    </div>
-                    <div class="right">
-                         <div class="textblock">
-                              <div class="leftBorder">
-                                   <p class="name">Annaëlle</p>
-                                   <p class="role">Chargée de la communication</p>
-                                   <p class="parcours">Elle est en 1ère année universaite à Sciences Po Paris</p>
-                              </div>
-                              <p class="participation">
-                                   Le choix de participer au projet d’A-prendre en main a été une évidence, car depuis longtemps l’intérêt d’Annaëlle est de s’engager dans des initiatives associatives.  Chargée de développer la communication (réseaux sociaux, plaquettes de communication, etc) afin que l’association puisse être connue et que nos projets aboutissent.
-                              </p>
-                         </div>
-                    </div>
-               </li>
-               <li class="cf">
-                    <div class="left">
-                         <img src="assets/css/images/imgEquipe2.jpg" alt="">
-                    </div>
-                    <div class="right">
-                         <div class="textblock">
-                              <div class="leftBorder">
-                                   <p class="name">Annaëlle</p>
-                                   <p class="role">Chargée de la communication</p>
-                                   <p class="parcours">Elle est en 1ère année universaite à Sciences Po Paris</p>
-                              </div>
-                              <p class="participation">
-                                   Le choix de participer au projet d’A-prendre en main a été une évidence, car depuis longtemps l’intérêt d’Annaëlle est de s’engager dans des initiatives associatives.  Chargée de développer la communication (réseaux sociaux, plaquettes de communication, etc) afin que l’association puisse être connue et que nos projets aboutissent.
-                              </p>
-                         </div>
-                    </div>
-               </li>
-               <li class="cf">
-                    <div class="left">
-                         <img src="assets/css/images/imgEquipe2.jpg" alt="">
-                    </div>
-                    <div class="right">
-                         <div class="textblock">
-                              <div class="leftBorder">
-                                   <p class="name">Annaëlle</p>
-                                   <p class="role">Chargée de la communication</p>
-                                   <p class="parcours">Elle est en 1ère année universaite à Sciences Po Paris</p>
-                              </div>
-                              <p class="participation">
-                                   Le choix de participer au projet d’A-prendre en main a été une évidence, car depuis longtemps l’intérêt d’Annaëlle est de s’engager dans des initiatives associatives.  Chargée de développer la communication (réseaux sociaux, plaquettes de communication, etc) afin que l’association puisse être connue et que nos projets aboutissent.
-                              </p>
-                         </div>
-                    </div>
-               </li>
-               <li class="cf">
-                    <div class="left">
-                         <img src="assets/css/images/imgEquipe2.jpg" alt="">
-                    </div>
-                    <div class="right">
-                         <div class="textblock">
-                              <div class="leftBorder">
-                                   <p class="name">Annaëlle</p>
-                                   <p class="role">Chargée de la communication</p>
-                                   <p class="parcours">Elle est en 1ère année universaite à Sciences Po Paris</p>
-                              </div>
-                              <p class="participation">
-                                   Le choix de participer au projet d’A-prendre en main a été une évidence, car depuis longtemps l’intérêt d’Annaëlle est de s’engager dans des initiatives associatives.  Chargée de développer la communication (réseaux sociaux, plaquettes de communication, etc) afin que l’association puisse être connue et que nos projets aboutissent.
-                              </p>
-                         </div>
-                    </div>
-               </li>
-               <li class="cf">
-                    <div class="left">
-                         <img src="assets/css/images/imgEquipe2.jpg" alt="">
-                    </div>
-                    <div class="right">
-                         <div class="textblock">
-                              <div class="leftBorder">
-                                   <p class="name">Annaëlle</p>
-                                   <p class="role">Chargée de la communication</p>
-                                   <p class="parcours">Elle est en 1ère année universaite à Sciences Po Paris</p>
-                              </div>
-                              <p class="participation">
-                                   Le choix de participer au projet d’A-prendre en main a été une évidence, car depuis longtemps l’intérêt d’Annaëlle est de s’engager dans des initiatives associatives.  Chargée de développer la communication (réseaux sociaux, plaquettes de communication, etc) afin que l’association puisse être connue et que nos projets aboutissent.
-                              </p>
-                         </div>
-                    </div>
-               </li>
-               <li class="cf">
-                    <div class="left">
-                         <img src="assets/css/images/imgEquipe2.jpg" alt="">
-                    </div>
-                    <div class="right">
-                         <div class="textblock">
-                              <div class="leftBorder">
-                                   <p class="name">Annaëlle</p>
-                                   <p class="role">Chargée de la communication</p>
-                                   <p class="parcours">Elle est en 1ère année universaite à Sciences Po Paris</p>
-                              </div>
-                              <p class="participation">
-                                   Le choix de participer au projet d’A-prendre en main a été une évidence, car depuis longtemps l’intérêt d’Annaëlle est de s’engager dans des initiatives associatives.  Chargée de développer la communication (réseaux sociaux, plaquettes de communication, etc) afin que l’association puisse être connue et que nos projets aboutissent.
-                              </p>
-                         </div>
-                    </div>
-               </li>
+              <?php endwhile; ?>
           </ul>
      </div>
 </div>
@@ -287,12 +160,12 @@
 
 </div>
 
-<!--<script src="assets/css/js/jquery-1.10.2.min.js"></script>-->
-<!--<script src="assets/css/js/jquery.gsap.min.js"></script>-->
-<!--<script src="assets/css/js/TimelineMax.min.js"></script>-->
-<!--<script src="assets/css/js/TweenMax.min.js"></script>-->
-<!--<script src="assets/css/js/jquery.bxslider.min.js"></script>-->
-<!--<script src="assets/css/js/default.js"></script>-->
+<!--<script src="<?php echo get_stylesheet_directory_uri() ?>/assets/css/js/jquery-1.10.2.min.js"></script>-->
+<!--<script src="<?php echo get_stylesheet_directory_uri() ?>/assets/css/js/jquery.gsap.min.js"></script>-->
+<!--<script src="<?php echo get_stylesheet_directory_uri() ?>/assets/css/js/TimelineMax.min.js"></script>-->
+<!--<script src="<?php echo get_stylesheet_directory_uri() ?>/assets/css/js/TweenMax.min.js"></script>-->
+<!--<script src="<?php echo get_stylesheet_directory_uri() ?>/assets/css/js/jquery.bxslider.min.js"></script>-->
+<!--<script src="<?php echo get_stylesheet_directory_uri() ?>/assets/css/js/default.js"></script>-->
 
 <?php
     /**
