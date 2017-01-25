@@ -1,2 +1,549 @@
 @import "_variable";
+@import "_reset";
+@import "_mixins";
 
+
+/***************************/
+/**********CLEARFIX**********/
+/***************************/
+.cf:before,
+.cf:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+.cf:after {
+  clear: both;
+}
+.cf {
+  *zoom: 1;
+}
+
+/*************************************/
+/**************GENERAL****************/
+/*************************************/
+body{
+  margin: 0;
+  background-image: url('images/bg-body.jpg');
+  font-family: 'Roboto', sans-serif;
+}
+
+textarea{
+  resize: none;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+.content{
+  width: 97%;
+  margin: 30px auto 0;
+  background-color: #fff;
+  position: relative;
+}
+
+.title{
+  font-size: 40px;
+  color: #474646;
+}
+
+.bloc{
+  height: 500px;
+}
+
+
+button.btnBleu{
+  background-color: #084797;
+  border: 2px solid #084797;
+  outline: none;
+  color: #fff;
+  font-size: 15px;
+  border-radius: 10px;
+  padding: 5px 50px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+button.btnBleu:hover{
+  background-color: transparent;
+}
+
+/************************************/
+/**************HEADER****************/
+/************************************/
+.header{
+  background-color: #3ca968;
+  height: 60px;
+  width: 100%;
+  z-index: 10;
+}
+/*
+img.menu-burger{
+  width: 30px;
+  margin-left: 10px;
+}
+
+img.closeIcon{
+  width: 20px;
+}
+
+.burgerMenu{
+  background-image: url('images/bg-burger.jpg');
+  width: 100%;
+  position: absolute;
+  top: 0;
+  display: none;
+}
+
+.burgerMenu ul li{
+  text-align: center;
+  font-size: 40px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.iconBurger{
+  width: 30px;
+  margin-left: 10px;
+  padding-top: 20px;
+}
+
+.iconBurger div{
+  width: 100%;
+  height: 2px;
+  margin-top: 5px;
+  background-color: #000;
+}
+
+.iconBurger div:first-child{
+  margin-top: 0;
+}*/
+
+
+.header .content-logo{
+  float: left;
+  margin: 18px 20px 0;
+}
+
+.header .content-logo .logo{
+  width: 40px;
+  float: left;
+}
+
+.header .content-logo p{
+  float: left;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 900;
+  margin: 5px 15px 0;
+}
+
+.header nav{
+  float: right;
+}
+
+.header nav ul li{
+  float: left;
+  text-align: center;
+  padding: 22px 25px 19px;
+}
+
+.header nav ul li a{
+  color: #fff;
+  font-size: 14px;
+  padding-bottom: 20px;
+}
+
+.header nav ul li:hover a{
+  text-shadow: 1px 0 #fff;
+}
+
+.header nav ul li:hover {
+  border-bottom: 3px solid #35965c;
+}
+
+.header nav ul li.don{
+  background-color: #35965c;
+  padding: 22px 25px 22px;
+}
+
+.header nav ul li.don:hover{
+  border-bottom: none;
+}
+
+/********************************************/
+/**************BLOC PARALLAXE****************/
+/********************************************/
+.parallaxe .visible{
+  height: 455px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  background-color: #3ca968;
+}
+
+.parallaxe .visible .textblock{
+  width: 50%;
+  /*margin: auto 130px;*/
+  padding-left: 130px;
+}
+
+.parallaxe .visible .textblock p{
+  color: #fff;
+}
+
+.parallaxe .visible .textblock p.discover{
+  font-size: 40px;
+  font-weight: 900;
+}
+
+.parallaxe .visible .textblock p.description{
+  font-size: 18px;
+  line-height: 25px;
+  margin-top: 15px;
+  font-weight: 300;
+}
+
+.parallaxe .visible .content-img{
+  width: 40%;
+  height: 100%;
+  position: relative;
+}
+
+.parallaxe .visible img{
+  position: absolute;
+  bottom: 0;
+  right: 180px;
+}
+
+/*PARTIE CACHEE*/
+.parallaxe .cache{
+  height: 400px;
+  background-color: lightcoral;
+  display: none;
+}
+
+/**********************************************/
+/**************BLOC ASSOCIATION****************/
+/**********************************************/
+.association{
+  width: 100%;
+  margin-top: 105px;
+}
+
+.association .content-association{
+  width: 80%;
+  margin: 0 auto;
+  border-left: 10px solid #004499;
+}
+
+.association .content-association p.title{
+  padding-left: 30px;
+  font-weight: 900;
+  line-height: 50px;
+}
+
+.association .content-association p.description{
+  font-size: 18px;
+  color: #474646;
+  width: 80%;
+  padding-left: 30px;
+  margin-top: 40px;
+  line-height: 30px;
+}
+
+.association .words{
+  width: 100%;
+  height: 385px;
+  margin-top: 110px;
+  position: relative;
+}
+
+.association .words p.entire{
+  color: #f8faf9;
+  font-size: 270px;
+  font-weight: 900;
+}
+
+.association .words .right{
+  width: 50%;
+  float: right;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.association .words .right p{
+  color: #004499;
+  font-weight: 900;
+}
+
+.association .words .right p.one{
+  font-size: 50px;
+  margin-left: 15%;
+}
+
+.association .words .right p.two{
+  font-size: 60px;
+  margin-left: 48%;
+  margin-top: 40px;
+}
+
+.association .words .right p.three{
+  font-size: 40px;
+  margin-left: 2%;
+  margin-top: 50px;
+}
+
+.association .words .right p.four{
+  font-size: 50px;
+  margin-left: 60%;
+  margin-top: 25px;
+}
+
+/****************************************/
+/**************BLOC CROWD****************/
+/****************************************/
+.crowd{
+  width: 100%;
+  height: 460px;
+  background-color: #eebc37;
+  position: relative;
+}
+
+.crowd .left,
+.crowd .right{
+  width: 50%;
+  position: relative;
+  z-index: 2;
+}
+
+.crowd .left{
+  float: left;
+}
+
+.crowd .right{
+  float: right;
+}
+
+.crowd .left .textblock,
+.crowd .right .textblock{
+  margin-top: 115px;
+  color: #fff;
+}
+
+.crowd .left .textblock {
+  margin-left: 10%;
+}
+
+.crowd .left .textblock p.title{
+  color: #fff;
+  font-weight: 900;
+}
+
+.crowd .left .textblock button{
+  margin-top: 35px;
+}
+
+.crowd .right .textblock{
+  width: 80%;
+}
+
+.crowd .right .textblock p.blockTitle{
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.crowd .right .textblock p.contenu{
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 28px;
+  margin-top: 40px;
+}
+
+.crowd p.somme{
+  font-size: 200px;
+  color: #f4c23b;
+  font-weight: 900;
+  position: absolute;
+  bottom: 0;
+}
+
+/*****************************************/
+/**************BLOC EQUIPE****************/
+/*****************************************/
+.equipe{
+  width: 100%;
+  position: relative;
+  margin-top: 160px;
+  padding-bottom: 20px;
+}
+
+.equipe .wordEquipe{
+  font-size: 270px;
+  color: #f8f8f8;
+  font-weight: 900;
+  position: absolute;
+  top: 195px;
+  right: 0;
+}
+
+.equipe .content-equipe{
+  width: 90%;
+  margin: 0 auto;
+}
+
+.equipe p.title{
+  line-height: 50px;
+  font-weight: 900;
+}
+
+.equipe p.title span{
+  color: #e74c38;
+}
+
+.equipe .bx-viewport{
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  margin-top: 45px;
+}
+
+.equipe .bx-controls-direction{
+  position: absolute;
+  right: 0;
+  margin-top: 50px;
+}
+
+.equipe .bx-controls-direction a{
+  text-indent: 0;
+  font-size: 20px;
+  color: #474646;
+  font-weight: 900;
+}
+
+.equipe .bx-controls-direction .bx-prev{
+  padding-right: 17px;
+}
+
+.equipe .bx-controls-direction .bx-next{
+  border-left: 2px solid #e6e6e8;
+  padding-left: 15px;
+}
+
+.equipe .bx-wrapper .bx-pager{
+  position: absolute;
+  top: 140px;
+  left: -45px;
+}
+
+.equipe .bx-wrapper .bx-pager.bx-default-pager a{
+  width: 8px;
+  height: 8px;
+  background-color: #C6C6C6;
+}
+
+.equipe .bx-wrapper .bx-pager.bx-default-pager a.active{
+  background-color: #474646;
+}
+
+.equipe .bx-wrapper .bx-pager .bx-pager-item,
+.equipe .bx-wrapper .bx-controls-auto .bx-controls-auto-item{
+  margin-top: 5px;
+}
+
+.equipe ul li .left{
+  float: left;
+  width: 30%;
+}
+
+.equipe ul li .left img{
+  width: 90%;
+}
+
+.equipe ul li .right{
+  float: right;
+  width: 70%;
+}
+
+.equipe ul li .right .textblock{
+  width: 85%;
+}
+
+.equipe ul li .right .textblock .leftBorder{
+  border-left: 10px solid #e74c38;
+  padding: 105px 60px 30px;
+}
+
+.equipe ul li .right .textblock .leftBorder p.name{
+  font-size: 40px;
+  color: #474646;
+  font-weight: 900;
+}
+
+.equipe ul li .right .textblock .leftBorder p.role{
+  font-size: 25px;
+  color: #313131;
+  font-weight: 900;
+  margin-top: 40px;
+}
+
+.equipe ul li .right .textblock .leftBorder p.parcours{
+  font-size: 18px;
+  color: #313131;
+  font-weight: 300;
+  margin-top: 20px;
+}
+
+.equipe ul li .right .textblock p.participation{
+  font-size: 18px;
+  color: #313131;
+  font-weight: 300;
+  margin-top: 20px;
+  line-height: 28px;
+  padding-left: 70px;
+}
+
+/********************************************/
+/**************BLOC ACTUALITES***************/
+/********************************************/
+.actualites{
+  width: 100%;
+  height: 700px;
+  margin-top: 205px;
+}
+
+.actualites .content-actu{
+  width: 90%;
+  margin: 0 auto;
+}
+
+/*****************************************/
+/**************BLOC CONTACT***************/
+/*****************************************/
+.contact{
+  width: 100%;
+}
+
+.contact .content-contact{
+  width: 60%;
+  margin: 0 auto;
+}
+
+.contact .content-contact p.title{
+  font-weight: 900;
+}
+
+.contact .content-contact form input,
+.contact .content-contact form textarea{
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid black;
+}
+
+.contact .content-contact form textarea{
+  resize: none;
+}
