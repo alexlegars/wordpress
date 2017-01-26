@@ -2,7 +2,11 @@
 @import "_reset";
 @import "_mixins";
 
-
+#caca {
+  width: 30px;
+  height: 30px;
+  background: blue;
+}
 /***************************/
 /**********CLEARFIX**********/
 /***************************/
@@ -25,6 +29,8 @@ body{
   margin: 0;
   background-image: url('images/bg-body.jpg');
   font-family: 'Roboto', sans-serif;
+  padding-bottom: 30px;
+  overflow-x: hidden;
 }
 
 textarea{
@@ -43,9 +49,14 @@ a{
   position: relative;
 }
 
+.showPhone{
+  display: none;
+}
+
 .title{
-  font-size: 40px;
+  font-size: 30px;
   color: #474646;
+  font-weight: 900;
 }
 
 .bloc{
@@ -53,19 +64,18 @@ a{
 }
 
 
-button.btnBleu{
+.btnBleu{
   background-color: #084797;
   border: 2px solid #084797;
   outline: none;
   color: #fff;
   font-size: 15px;
-  border-radius: 10px;
-  padding: 5px 50px;
-  margin-top: 20px;
+  padding: 8px 50px;
+  margin-top: 70px;
   cursor: pointer;
 }
 
-button.btnBleu:hover{
+.btnBleu:hover{
   background-color: transparent;
 }
 
@@ -78,49 +88,6 @@ button.btnBleu:hover{
   width: 100%;
   z-index: 10;
 }
-/*
-img.menu-burger{
-  width: 30px;
-  margin-left: 10px;
-}
-
-img.closeIcon{
-  width: 20px;
-}
-
-.burgerMenu{
-  background-image: url('images/bg-burger.jpg');
-  width: 100%;
-  position: absolute;
-  top: 0;
-  display: none;
-}
-
-.burgerMenu ul li{
-  text-align: center;
-  font-size: 40px;
-  text-transform: uppercase;
-  cursor: pointer;
-  margin-top: 20px;
-}
-
-.iconBurger{
-  width: 30px;
-  margin-left: 10px;
-  padding-top: 20px;
-}
-
-.iconBurger div{
-  width: 100%;
-  height: 2px;
-  margin-top: 5px;
-  background-color: #000;
-}
-
-.iconBurger div:first-child{
-  margin-top: 0;
-}*/
-
 
 .header .content-logo{
   float: left;
@@ -130,6 +97,10 @@ img.closeIcon{
 .header .content-logo .logo{
   width: 40px;
   float: left;
+}
+
+.header .content-logo .logoGrey{
+  display: none;
 }
 
 .header .content-logo p{
@@ -154,6 +125,7 @@ img.closeIcon{
   color: #fff;
   font-size: 14px;
   padding-bottom: 20px;
+  font-weight: 300;
 }
 
 .header nav ul li:hover a{
@@ -177,17 +149,18 @@ img.closeIcon{
 /**************BLOC PARALLAXE****************/
 /********************************************/
 .parallaxe .visible{
-  height: 455px;
+  height: 600px;
   display: flex;
   align-items: center;
   flex-direction: row;
   background-color: #3ca968;
+  position: relative;
 }
 
 .parallaxe .visible .textblock{
   width: 50%;
-  /*margin: auto 130px;*/
   padding-left: 130px;
+  z-index: 2;
 }
 
 .parallaxe .visible .textblock p{
@@ -197,10 +170,11 @@ img.closeIcon{
 .parallaxe .visible .textblock p.discover{
   font-size: 40px;
   font-weight: 900;
+  line-height: 45px;
 }
 
 .parallaxe .visible .textblock p.description{
-  font-size: 18px;
+  font-size: 15px;
   line-height: 25px;
   margin-top: 15px;
   font-weight: 300;
@@ -210,12 +184,21 @@ img.closeIcon{
   width: 40%;
   height: 100%;
   position: relative;
+  background-image: url('images/paysage-banniere.png');
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.parallaxe .visible img{
+.parallaxe .visible img.sansEau1{
   position: absolute;
   bottom: 0;
-  right: 180px;
+  max-height: 90%;
+}
+
+.parallaxe .visible img.herbe{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 /*PARTIE CACHEE*/
@@ -239,19 +222,19 @@ img.closeIcon{
   border-left: 10px solid #004499;
 }
 
-.association .content-association p.title{
-  padding-left: 30px;
-  font-weight: 900;
-  line-height: 50px;
+.association p.title{
+  padding-left: 10%;
+  line-height: 40px;
 }
 
 .association .content-association p.description{
-  font-size: 18px;
+  font-size: 16px;
   color: #474646;
   width: 80%;
   padding-left: 30px;
   margin-top: 40px;
   line-height: 30px;
+  font-weight: 100;
 }
 
 .association .words{
@@ -259,12 +242,14 @@ img.closeIcon{
   height: 385px;
   margin-top: 110px;
   position: relative;
+  overflow-x: hidden;
 }
 
 .association .words p.entire{
   color: #f8faf9;
-  font-size: 270px;
+  font-size: 220px;
   font-weight: 900;
+  margin-left: -25px;
 }
 
 .association .words .right{
@@ -281,36 +266,121 @@ img.closeIcon{
 }
 
 .association .words .right p.one{
-  font-size: 50px;
+  font-size: 35px;
   margin-left: 15%;
 }
 
 .association .words .right p.two{
-  font-size: 60px;
-  margin-left: 48%;
-  margin-top: 40px;
+  font-size: 25px;
+  margin-left: 35%;
+  margin-top: 30px;
 }
 
 .association .words .right p.three{
-  font-size: 40px;
-  margin-left: 2%;
-  margin-top: 50px;
+  font-size: 30px;
+  margin-left: 5%;
+  margin-top: 10px;
 }
 
 .association .words .right p.four{
-  font-size: 50px;
-  margin-left: 60%;
-  margin-top: 25px;
+  font-size: 30px;
+  margin-left: 30%;
+  margin-top: 30px;
 }
+
+/*******************************************/
+/**************BLOC APPROCHE****************/
+/*******************************************/
+.approche{
+  width: 100%;
+  background-image: url('images/bg-approche.png');
+  background-repeat: no-repeat;
+  background-position-y: center;
+  padding-bottom: 135px;
+}
+
+.approche .content-approche{
+  width: 90%;
+  margin: 0 auto;
+}
+
+.approche p.subtitle{
+  font-size: 25px;
+  color: #474646;
+  font-weight: 900;
+}
+
+.approche p.description{
+  width: 80%;
+}
+
+.approche .left,
+.approche .right{
+  width: 50%;
+}
+
+.approche .left{
+  float: left;
+}
+
+.approche .left .title,
+.approche .left .trait-jaune{
+  margin-left: 50px;
+}
+
+.approche .left .title{
+  line-height: 50px;
+}
+
+.approche .left .trait-jaune{
+  width: 60px;
+  background-color: #eebc37;
+  height: 5px;
+  margin-top: 45px;
+}
+
+.approche .left .textblock{
+  margin-top: 340px;
+}
+
+.approche .left .textblock .description,
+.approche .right .textblock .description{
+  margin-top: 75px;
+  font-weight: 100;
+  font-size: 15px;
+  line-height: 30px;
+}
+
+.approche .right{
+  float: right;
+}
+
+.approche .right .textblock1{
+  margin-top: 130px;
+}
+
+.approche .right img.enfant{
+  margin-top: 145px;
+}
+
+.approche .right .textblock2{
+  margin-top: 155px;
+}
+
+.approche .right .textblock2 p.description{
+  margin-top: 70px;
+}
+
 
 /****************************************/
 /**************BLOC CROWD****************/
 /****************************************/
 .crowd{
   width: 100%;
-  height: 460px;
   background-color: #eebc37;
   position: relative;
+  padding-bottom: 80px;
+  overflow: hidden;
 }
 
 .crowd .left,
@@ -347,6 +417,10 @@ img.closeIcon{
   margin-top: 35px;
 }
 
+.crowd .left .textblock button:hover{
+  color: #084797;
+}
+
 .crowd .right .textblock{
   width: 80%;
 }
@@ -357,7 +431,7 @@ img.closeIcon{
 }
 
 .crowd .right .textblock p.contenu{
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 300;
   line-height: 28px;
   margin-top: 40px;
@@ -368,7 +442,85 @@ img.closeIcon{
   color: #f4c23b;
   font-weight: 900;
   position: absolute;
-  bottom: 0;
+  bottom: -45px;
+  left: -30px;
+}
+
+/*******************************************/
+/**************BLOC OBJECTIF****************/
+/*******************************************/
+.objectif{
+  width: 100%;
+  margin-top: 60px;
+}
+
+.objectif .imgDon{
+  width: 100%;
+}
+
+.objectif .content-objectif{
+  width: 90%;
+  margin: 130px auto 0;
+}
+
+.objectif .content-objectif .left{
+  width: 45%;
+  float: left;
+}
+
+.objectif .content-objectif .left p.objectifMois{
+  color: #e74c38;
+  font-size: 20;
+  font-weight: 900;
+}
+
+.objectif .content-objectif .left p.title{
+  margin-top: 5px;
+}
+
+.objectif .content-objectif .left p.subtitle{
+  font-size: 20px;
+  font-weight: 900;
+  padding-top: 40px;
+  border-right: 5px solid #e74c38;
+  color: #474646;
+}
+
+.objectif .content-objectif .left p.description{
+  font-size: 15px;
+  font-weight: 300;
+  color: #838383;
+  line-height: 30px;
+  width: 70%;
+  margin-top: 85px;
+}
+
+.objectif .content-objectif .right{
+  width: 55%;
+  float: right;
+}
+
+.objectif .content-objectif .right .textblock{
+  width: 80%;
+  margin: 80px auto 0;
+}
+
+.objectif .content-objectif .right .text{
+  margin-top: 70px;
+}
+
+.objectif .content-objectif .right .text span{
+  color: #e74c38;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.objectif .content-objectif .right .text p{
+  color: #474646;
+  font-size: 25px;
+  font-weight: 900;
+  margin-top: 5px;
+  line-height: 40px;
 }
 
 /*****************************************/
@@ -377,8 +529,9 @@ img.closeIcon{
 .equipe{
   width: 100%;
   position: relative;
-  margin-top: 160px;
+  margin-top: 175px;
   padding-bottom: 20px;
+  overflow-x: hidden;
 }
 
 .equipe .wordEquipe{
@@ -387,7 +540,7 @@ img.closeIcon{
   font-weight: 900;
   position: absolute;
   top: 195px;
-  right: 0;
+  right: -60px;
 }
 
 .equipe .content-equipe{
@@ -409,6 +562,7 @@ img.closeIcon{
   border: none;
   box-shadow: none;
   margin-top: 45px;
+  overflow-x: hidden;
 }
 
 .equipe .bx-controls-direction{
@@ -456,7 +610,7 @@ img.closeIcon{
 
 .equipe ul li .left{
   float: left;
-  width: 30%;
+  width: 35%;
 }
 
 .equipe ul li .left img{
@@ -465,7 +619,7 @@ img.closeIcon{
 
 .equipe ul li .right{
   float: right;
-  width: 70%;
+  width: 65%;
 }
 
 .equipe ul li .right .textblock{
@@ -473,8 +627,9 @@ img.closeIcon{
 }
 
 .equipe ul li .right .textblock .leftBorder{
-  border-left: 10px solid #e74c38;
-  padding: 105px 60px 30px;
+  border-left: 5px solid #e74c38;
+  padding: 0 60px 30px;
+  margin-top: 105px;
 }
 
 .equipe ul li .right .textblock .leftBorder p.name{
@@ -511,7 +666,6 @@ img.closeIcon{
 /********************************************/
 .actualites{
   width: 100%;
-  height: 700px;
   margin-top: 205px;
 }
 
@@ -520,30 +674,643 @@ img.closeIcon{
   margin: 0 auto;
 }
 
+.actualites .content-actu .title{
+  font-weight: 900;
+}
+
+.actualites .content-actu .all-img{
+  margin-top: 50px;
+}
+
+.actualites .content-actu .all-img .left{
+  float: left;
+}
+
+.actualites .content-actu .all-img .right{
+  float: right;
+}
+
+.actualites .content-actu .all-img .content-img{
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 30px;
+  width: 48%;
+}
+
+.actualites .content-actu .all-img .content-img img{
+  width: 100%;
+}
+
+.actualites .content-actu .all-img .content-img:hover .cache{
+  display: flex;
+}
+
+.actualites .content-actu .all-img .cache{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background-color: rgba(245,245,245, 0.7);
+  display: flex;
+  align-items: center;
+  display: none;
+}
+
+.actualites .content-actu .all-img .cache .content-titre{
+  margin-left: 7%;
+}
+
+.actualites .content-actu .all-img .cache .titre{
+  font-size: 40px;
+  color: #333333;
+  font-weight: 900;
+  background-color: #fff;
+  margin-top: 5px;
+  padding: 15px 20px 15px 15px;
+}
+
+.actualites .content-actu .all-img .cache p.date{
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 18px;
+  color: #474646;
+}
+
 /*****************************************/
 /**************BLOC CONTACT***************/
 /*****************************************/
+
+.screen-reader-response{
+  display: none !important;
+}
+.wpcf7-not-valid-tip{
+  margin-top: 3px;
+  font-size: 11px;
+  font-weight: 900;
+  color: red;
+}
+.wpcf7-response-output.wpcf7-display-none.wpcf7-mail-sent-ok {
+  font-size: 11px;
+  color: green;
+  font-weight: 900;
+}
+.wpcf7-response-output.wpcf7-display-none.wpcf7-validation-errors {
+  margin-top: 3px;
+  font-size: 11px;
+  font-weight: 900;
+  color: red;
+}
 .contact{
   width: 100%;
+  padding-bottom: 190px;
+  margin-top: 95px;
 }
 
 .contact .content-contact{
   width: 60%;
-  margin: 0 auto;
+  margin-left: 5%;
 }
 
 .contact .content-contact p.title{
   font-weight: 900;
 }
 
-.contact .content-contact form input,
+.contact .content-contact form input[type=text],
+.contact .content-contact form input[type=email],
 .contact .content-contact form textarea{
   width: 100%;
   border: none;
   outline: none;
   border-bottom: 1px solid black;
+  padding-bottom: 20px;
+  font-size: 20px;
+  color: #474646;
+  font-weight: 900;
+}
+
+.contact .content-contact form input[type=text]::-moz-placeholder,
+.contact .content-contact form input[type=email]::-moz-placeholder,
+.contact .content-contact form textarea::-moz-placeholder{
+  font-size: 20px;
+  color: #474646;
+  font-weight: 900;
+}
+
+.contact .content-contact form input[type=text]::-webkit-input-placeholder,
+.contact .content-contact form input[type=email]::-webkit-input-placeholder,
+.contact .content-contact form textarea::-webkit-input-placeholder{
+  font-size: 18px;
+  color: #474646;
+  font-weight: 900;
+}
+
+.contact .content-contact form textarea::-moz-placeholder{
+  line-height: 135px;
+}
+
+.contact .content-contact form textarea::-webkit-input-placeholder{
+  line-height: 135px;
 }
 
 .contact .content-contact form textarea{
-  resize: none;
+  position: relative;
+}
+
+.contact .content-contact form input[name=name]{
+  margin-top: 110px;
+}
+
+.contact .content-contact form input[name=email]{
+  margin-top: 60px;
+}
+
+.contact .content-contact form textarea[name=message]{
+  margin-top: 60px;
+  padding-bottom: 0;
+  height: 100px;
+}
+
+.contact .content-contact form input[type=text]:focus::-webkit-input-placeholder,
+.contact .content-contact form input[type=email]:focus::-webkit-input-placeholder,
+.contact .content-contact form textarea:focus::-webkit-input-placeholder{
+  color: transparent;
+}
+
+.contact .content-contact form input[type=text]:focus:-moz-placeholder,
+.contact .content-contact form input[type=email]:focus:-moz-placeholder,
+.contact .content-contact form textarea:focus:-moz-placeholder{
+  color: transparent;
+}
+
+.contact .content-contact form input[type=submit]{
+  margin-top: 70px;
+  padding: 7px 50px;
+}
+
+.contact .content-contact form input[type=submit]:hover{
+  color: #084797;
+}
+
+/***********************************/
+/**************FOOTER***************/
+/***********************************/
+.footer{
+  width: 100%;
+  color: #474747;
+}
+
+.footer .content-footer{
+  width: 90%;
+  margin: 0 auto;
+}
+
+.footer p.title{
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.footer .left{
+  float: left;
+  width: 50%;
+}
+
+.footer .left .content-img{
+  width: 190px;
+  margin: 35px 15px 0;
+}
+
+.footer .left .content-img a.attineos{
+  float: left;
+}
+
+.footer .left .content-img a.digitalVillage{
+  float: right;
+}
+
+.footer .left .content-img a.supMontpellier img{
+  margin: 40px auto 0;
+  display: block;
+}
+
+.footer .right{
+  float: right;
+  width: 50%;
+}
+
+.footer .right .follow{
+  width: 40%;
+  float: left;
+  padding-right: 50px;
+  text-align: right;
+}
+
+.footer .right .follow .reseaux{
+  margin-top: 55px;
+}
+
+.footer .right .follow .reseaux a{
+  display: block;
+  color: #004499;
+  text-decoration: underline;
+  line-height: 30px;
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.footer .right .infos{
+  width: 59%;
+  border-left: 2px solid #e9e9e9;
+  float: right;
+  padding-left: 48px;
+  padding-bottom: 15px;
+}
+
+.footer .right .infos ul{
+  margin-top: 55px;
+}
+
+.footer .right .infos ul li{
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 35px;
+}
+
+.footer .copyright{
+  text-align: center;
+  font-size: 14px;
+  clear: both;
+  padding: 50px 0;
+}
+
+
+/*****************************************/
+/****************RESPONSIVE***************/
+/*****************************************/
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation:landscape){
+  .actualites .content-actu .all-img .cache {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 768px){
+  .showPhone{
+    display: block;
+  }
+
+  .showDesktop{
+    display: none
+  }
+
+  .content {
+    margin: 15px auto 0;
+  }
+
+  /******************************************/
+  /****************MENU BURGER***************/
+  /******************************************/
+  .headerMob{
+    height: 50px;
+    background-color: #fff;
+    z-index: 10;
+  }
+
+  img.menu-burger{
+    width: 30px;
+    margin-left: 10px;
+  }
+
+  img.closeIcon{
+    width: 20px;
+  }
+
+  .burgerMenu{
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    display: none;
+    z-index: 3;
+  }
+
+  .active{
+    display: block;
+    width: 103%;
+    margin-left: -1.5%;
+    margin-top: -15px;
+  }
+
+  .burgerMenu ul{
+    padding-top: 50px;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .burgerMenu ul li{
+    text-align: left;
+    font-size: 25px;
+    cursor: pointer;
+    margin-top: 20px;
+    border-bottom: 1px solid #3CA968;
+    padding-bottom: 10px;
+    padding-top: 20px;
+  }
+
+  .iconBurger{
+    width: 30px;
+    margin-left: 10px;
+    padding-top: 20px;
+    position: relative;
+    z-index: 3;
+    cursor: pointer;
+  }
+
+  .iconBurger .one.open{
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: relative;
+    top: 7px;
+  }
+
+  .iconBurger .two.open{
+    -ms-transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+
+  .iconBurger .three.open{
+    display: none;
+  }
+
+  .iconBurger div{
+    width: 100%;
+    height: 2px;
+    margin-top: 5px;
+    background-color: #000;
+  }
+
+  .iconBurger div:first-child{
+    margin-top: 0;
+  }
+
+  /****************************************/
+  /****************PARALLAXE***************/
+  /****************************************/
+  .parallaxe .visible{
+    height: 500px;
+  }
+
+  .parallaxe .visible .textblock{
+    width: 90%;
+    padding-left: 0;
+    margin: 0 auto;
+  }
+
+  .parallaxe .visible .textblock p.discover{
+    font-size: 25px;
+    line-height: 30px;
+  }
+
+  .parallaxe .visible .textblock p.description{
+    width: 80%;
+  }
+
+  .parallaxe .visible .textblock .btnBleu{
+    width: 70%;
+  }
+
+  .parallaxe .visible .content-img{
+    width: 20%;
+    background-image: none;
+    right: 10px;
+    bottom: 0;
+    position: absolute;
+  }
+
+  /******************************************/
+  /****************ASSOCIATION***************/
+  /******************************************/
+  .association .content-association {
+    width: 92%;
+  }
+
+  .association .content-association p.description {
+    width: 100%;
+  }
+
+  .title{
+    font-size: 25px;
+  }
+
+  .association .content-association p.title{
+    line-height: 40px;
+  }
+
+  .association .content-association p.description{
+    margin-top: 25px;
+    font-weight: 300;
+  }
+
+  /************************************/
+  /****************CROWD***************/
+  /************************************/
+  .crowd{
+    margin-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .crowd .left,
+  .crowd .right{
+    float: none;
+    width: 100%;
+  }
+
+  .crowd .left .textblock{
+    margin-top: 50px;
+  }
+
+  .crowd .right .textblock{
+    margin-top: 50px;
+    margin-left: 10%;
+  }
+
+  .crowd .right .textblock p.contenu{
+    margin-top: 20px;
+  }
+
+  .crowd .btnBleu.showPhone{
+    margin: 20px auto 0;
+  }
+
+  /*************************************/
+  /****************EQUIPE***************/
+  /*************************************/
+  .equipe{
+    margin-top: 50px;
+    padding-bottom: 40px;
+  }
+
+  .equipe p.title{
+    line-height: 40px;
+  }
+
+  .equipe ul li .left,
+  .equipe ul li .right{
+    float: none;
+    width: 100%;
+  }
+
+  .equipe ul li .left img {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .equipe ul li .right .textblock{
+    width: 100%;
+  }
+
+  .equipe ul li .right .textblock .leftBorder {
+    padding: 45px 40px 30px;
+    margin-top: 30px;
+    margin-left: 2px;
+  }
+
+  .equipe ul li .right .textblock .leftBorder p.name{
+    font-size: 25px;
+  }
+
+  .equipe ul li .right .textblock .leftBorder p.role{
+    font-size: 20px;
+    margin-top: 25px;
+    line-height: 22px;
+  }
+
+  .equipe ul li .right .textblock .leftBorder p.parcours{
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .equipe ul li .right .textblock p.participation{
+    padding-left: 50px;
+  }
+
+  .equipe .bx-controls-direction {
+    left: 50%;
+    margin-left: -108px;
+    margin-top: 30px;
+  }
+
+  .equipe .bx-wrapper .bx-pager{
+    bottom: -90px;
+    left: 0;
+    top: auto;
+  }
+
+  .equipe .bx-wrapper .bx-pager .bx-pager-item,
+  .equipe .bx-wrapper .bx-controls-auto .bx-controls-auto-item{
+    display: inline-block;
+  }
+
+  /*****************************************/
+  /****************ACTUALITES***************/
+  /*****************************************/
+  .actualites{
+    margin-top: 120px;
+  }
+
+  .actualites .content-actu{
+    width: 95%;
+  }
+
+  .actualites .content-actu .all-img .content-img{
+    width: 100%;
+  }
+
+  .actualites .content-actu .all-img .cache {
+    display: flex;
+  }
+
+  .actualites .content-actu .all-img .cache .titre{
+    font-size: 30px;
+    padding: 10px 15px 10px 10px;
+  }
+
+  .actualites .content-actu .all-img .cache p.date{
+    font-size: 15px;
+    right: 10px;
+    bottom: 10px;
+  }
+
+  /**************************************/
+  /****************CONTACT***************/
+  /**************************************/
+  .contact{
+    padding-bottom: 130px;
+  }
+  .contact .content-contact{
+    width: 85%;
+  }
+
+  .contact .content-contact form input[name="name"]{
+    margin-top: 50px;
+  }
+
+  /*************************************/
+  /****************FOOTER***************/
+  /*************************************/
+  .footer .content-footer{
+    width: 100%;
+  }
+
+  .footer p.title{
+    padding-left: 30px;
+  }
+
+  .footer .left,
+  .footer .right{
+    float: none;
+    width: 100%;
+  }
+
+  .footer .right .follow,
+  .footer .right .infos{
+    width: 100%;
+  }
+
+  .footer .left .content-img{
+    margin: 40px auto 0;
+  }
+
+  .footer .right .follow{
+    text-align: left;
+    margin-top: 80px;
+  }
+
+  .footer .right .follow .reseaux{
+    margin-top: 40px;
+    padding-left: 30px;
+  }
+
+  .footer .right .follow .reseaux a{
+    line-height: 27px;
+    font-size: 15px;
+  }
+
+  .footer .right .infos{
+    margin-top: 80px;
+    border: none;
+    padding-left: 0;
+  }
+
+  .footer .right .infos ul{
+    margin-top: 40px;
+    padding-left: 30px;
+  }
+
+  .footer .right .infos ul li{
+    font-size: 15px;
+    line-height: 32px;
+  }
 }

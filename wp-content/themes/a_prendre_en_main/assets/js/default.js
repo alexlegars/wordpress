@@ -107,8 +107,40 @@ function sliderEquipe(){
   jQuery('.equipe .bx-controls-direction .bx-next').html('Suivant')
 }
 
+
+function Ulule() {
+
+    var getJSON = function(url, callback) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("get", url, true);
+        xhr.responseType = "json";
+        xhr.onload = function() {
+            var status = xhr.status;
+            if (status == 200) {
+                callback(null, xhr.response);
+            } else {
+                callback(status);
+            }
+        };
+        xhr.send();
+    };
+
+
+    jQuery('#caca').click(function() {
+        console.log('ok');
+        getJSON("https://api.ulule.com/v1/projects/10-days-10-songs",
+            function(err, data) {
+                if (err != null) {
+                    alert("Something went wrong: " + err);
+                } else {
+                    alert("Your query count: " + data.id);
+                }
+            });
+    });
+}
 jQuery(document).ready(function() {
-  // burgerMenu();
+  // burgerMenu();getUlule();
+  Ulule();
   nav();
   blocParallaxe();
   sliderEquipe()

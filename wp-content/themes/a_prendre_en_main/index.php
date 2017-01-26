@@ -86,6 +86,7 @@
      <div class="left">
           <div class="textblock">
                <p class="title">Grâce à vous, <br> nous pouvons y croire !</p>
+               <div id="caca"></div>
                <button class="btnBleu">Participer à l'aventure</button>
           </div>
      </div>
@@ -130,7 +131,7 @@
                                    <p class="role"><?php the_field('role') ?></p>
                                    <p class="parcours"><?php the_field('parcours') ?></p>
                               </div>
-                              <p class="participation"><?php the_content() ?></p>
+                              <p class="participation"><?php the_field('description') ?></p>
                          </div>
                     </div>
                </li>
@@ -150,22 +151,18 @@
 <div class="contact" id="area6">
      <div class="content-contact">
           <p class="title">Faites-nous part de vos idées</p>
-          <form action="">
-               <input type="text" name="name" placeholder="votre nom">
-               <input type="text" name="mail" placeholder="votre adresse mail">
-               <textarea name="message" rows="8" cols="80" placeholder="dites-nous en plus"></textarea>
-          </form>
+         <?php echo do_shortcode( '[contact-form-7 id="46" title="Contact form 1"]' ); ?>
      </div>
 </div>
 
 </div>
 
-<!--<script src="<?php echo get_stylesheet_directory_uri() ?>/assets/css/js/jquery-1.10.2.min.js"></script>-->
-<!--<script src="<?php echo get_stylesheet_directory_uri() ?>/assets/css/js/jquery.gsap.min.js"></script>-->
-<!--<script src="<?php echo get_stylesheet_directory_uri() ?>/assets/css/js/TimelineMax.min.js"></script>-->
-<!--<script src="<?php echo get_stylesheet_directory_uri() ?>/assets/css/js/TweenMax.min.js"></script>-->
-<!--<script src="<?php echo get_stylesheet_directory_uri() ?>/assets/css/js/jquery.bxslider.min.js"></script>-->
-<!--<script src="<?php echo get_stylesheet_directory_uri() ?>/assets/css/js/default.js"></script>-->
+<!--<script src="--><?php //echo get_stylesheet_directory_uri() ?><!--/assets/css/js/jquery-1.10.2.min.js"></script>-->
+<!--<script src="--><?php //echo get_stylesheet_directory_uri() ?><!--/assets/css/js/jquery.gsap.min.js"></script>-->
+<!--<script src="--><?php //echo get_stylesheet_directory_uri() ?><!--/assets/css/js/TimelineMax.min.js"></script>-->
+<!--<script src="--><?php //echo get_stylesheet_directory_uri() ?><!--/assets/css/js/TweenMax.min.js"></script>-->
+<!--<script src="--><?php //echo get_stylesheet_directory_uri() ?><!--/assets/css/js/jquery.bxslider.min.js"></script>-->
+<!--<script src="--><?php //echo get_stylesheet_directory_uri() ?><!--/assets/css/js/default.js"></script>-->
 
 <?php
     /**
