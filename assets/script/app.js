@@ -28,8 +28,18 @@ boySwap
     .set(element.find('.img--boy'), {attr: {src: boySprite[3]}}, 300);
 
 var scene1 = new TimelineMax();
-scene1.to(element.find('.img--boy'), 1000, {left: '46%'}, 2000)
-    .to(element.find('.img--boy'), 500, {bottom: 50, width:'-=2%'}, 2500)
+scene1 .to(element.find('.story-text--container'), 500, {opacity:1}, 500)
+    .to(element.find('.story-text--container'), 500, {opacity:0}, 2250)
+    .set(element.find('.story-text--container .number_holder'), {text:'02'}, 3400)
+    .set(element.find('.story-text--container .story_text'), {text:'Wallah y a plus d\'eau chaude'}, 3400)
+    .to(element.find('.story-text--container'), 500, {opacity:1}, 3500)
+    .to(element.find('.story-text--container'), 500, {opacity:0}, 5000)
+    .set(element.find('.story-text--container .number_holder'), {text:'03'}, 6200)
+    .set(element.find('.story-text--container .story_text'), {text:'OMG l\'EAU EST TOUT CALCAIRE !!! LET THE MASTER DO, I\'m GONNA REPAIR THIS SHIT'}, 6200)
+    .to(element.find('.story-text--container'), 500, {opacity:1}, 6250)
+    .to(element.find('.story-text--container'), 500, {opacity:0}, 8000)
+    .to(element.find('.img--boy'), 1000, {left: '46%'}, 2000)
+    .to(element.find('.img--boy'), 500, {bottom: 50, width:'-=1%'}, 2500)
     .to(element.find('.img--puit'), 500, {left:'40%'},1500)
     .to(element.find('.img--puit'), 1000, {opacity: 1}, 4000);
 
@@ -37,7 +47,7 @@ scene1.to(element.find('.img--boy'), 1000, {left: '46%'}, 2000)
 var scene1Bg = new TimelineMax({repeat: 0});
 scene1Bg
     .to(element.find('.img--bg'), 4000, {right: '0%', ease:Linear.easeNone})
-    .add(function () {console.log(element.find('.img--puit'))});
+    .to(element.find('.img--sun'), 8000, {left: '-5%', ease:Linear.easeNone}, 0);
 
 
 
@@ -52,7 +62,7 @@ workerSwap
 
 var scene2 = new TimelineMax();
 scene2.to(element.find('.img--worker'), 1000, {left: '70%'}, 5000)
-    .to(element.find('.img--worker'), 1000, {bottom: 50}, 6000);
+    .to(element.find('.img--worker'), 1000, {bottom: 100, width:'-=1%'}, 6000);
 
 
 scene1Final = new TimelineMax({repeat: 0});
@@ -62,7 +72,7 @@ scene1Final.add([boySwap, scene1Bg, scene1, scene2, workerSwap])
 
 var sceneController = new ScrollMagic.Scene({
     duration: 8000,
-    offset: -20,
+    offset: -400,
     reverse: true,
     triggerElement: '.act_first'
 })

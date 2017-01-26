@@ -8,6 +8,11 @@ body {
   display: block; }
   .act_first .act_first_container {
     position: relative; }
+    .act_first .act_first_container .img--sun {
+      width: 7%;
+      position: absolute;
+      bottom: 700px;
+      z-index: 1; }
     .act_first .act_first_container .img--boy {
       width: 7%;
       position: absolute;
@@ -32,5 +37,24 @@ body {
       bottom: 10px;
       opacity: 1;
       z-index: 1; }
+    .act_first .act_first_container .story-text--container {
+      position: absolute;
+      font-family: Arial;
+      width: 50%;
+      box-sizing: border-box;
+      color: #000;
+      left: 50%;
+      bottom: 700px;
+      opacity: 0;
+      z-index: 1; }
+      .act_first .act_first_container .story-text--container .number_holder {
+        display: inline-block;
+        font-size: 24px;
+        font-weight: bold; }
+      .act_first .act_first_container .story-text--container .story_text {
+        position: relative;
+        top: 5px;
+        display: inline-block;
+        font-size: 16px; }
 
 /*# sourceMappingURL=style.css.map */
