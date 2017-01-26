@@ -1,6 +1,6 @@
-body {
-  height: 3000px;
-}
+//body {
+//  height: 3000px;
+//}
 
 .act_first {
   margin-top: 1000px;
@@ -9,10 +9,10 @@ body {
   display: block;
   .act_first_container {
     position: relative;
-    .img--sun{
+    .img--sun {
       width: 7%;
       position: absolute;
-      bottom: 700px;
+      bottom: 50vw;
       z-index: 1;
     }
     .img--boy {
@@ -22,6 +22,7 @@ body {
       z-index: 1;
     }
     .img--bg {
+      background: dodgerblue;
       width: 150%;
       position: absolute;
       bottom: 0;
@@ -29,6 +30,14 @@ body {
     }
     .img--puit {
       width: 40%;
+      left: 160%;
+      position: absolute;
+      bottom: 10px;
+      opacity: 0;
+      z-index: 1;
+    }
+    .img--smoke {
+      width: 8%;
       left: 160%;
       position: absolute;
       bottom: 10px;
@@ -43,26 +52,71 @@ body {
       opacity: 1;
       z-index: 1;
     }
-    .story-text--container{
+    .img--working {
+      width: 7%;
+      left: 160%;
       position: absolute;
-      font-family: Arial;
-      width:50%;
-      box-sizing: border-box;
-      color: #000;
-      left:50%;
-      bottom:700px;
+      bottom: 10px;
       opacity: 0;
       z-index: 1;
-      .number_holder{
+    }
+    .story-text--container {
+      position: absolute;
+      font-family: Roboto;
+      font-weight: bold;
+      color: #FFFFFF;
+      width: 50%;
+      box-sizing: border-box;
+      left: 50%;
+      bottom: 39vw;
+      opacity: 0;
+      z-index: 1;
+      .number_holder {
         display: inline-block;
-        font-size: 24px;
+        font-size: 50px;
         font-weight: bold;
       }
       .story_text {
         position: relative;
-        top:5px;
+        top: 5px;
         display: inline-block;
-        font-size: 16px;
+        font-size: 30px;
+      }
+    }
+    .leaf_container {
+      .img--leaf {
+        position: absolute;
+        width: 70%;
+        bottom: 0;
+        z-index: 3;
+      }
+      .left {
+        left: -70%;
+      }
+      .right {
+        right: -70%;
+      }
+    }
+    .comunity-case_container {
+      position: absolute;
+      left: 50%;
+      bottom: 50%;
+      width: 0;
+      height: 0;
+      background: #7c5d26;
+      opacity:1;
+      z-index: 3;
+      .img--case {
+        position: absolute;
+        width:0;
+        left: -25;
+      }
+      .img--hand {
+        position: absolute;
+        opacity:0;
+        bottom:25vw;
+        width: 25%;
+        left: -25%;
       }
     }
   }

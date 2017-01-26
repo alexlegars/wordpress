@@ -1,6 +1,3 @@
-body {
-  height: 3000px; }
-
 .act_first {
   margin-top: 1000px;
   height: 300px;
@@ -11,7 +8,7 @@ body {
     .act_first .act_first_container .img--sun {
       width: 7%;
       position: absolute;
-      bottom: 700px;
+      bottom: 50vw;
       z-index: 1; }
     .act_first .act_first_container .img--boy {
       width: 7%;
@@ -19,12 +16,20 @@ body {
       bottom: 0;
       z-index: 1; }
     .act_first .act_first_container .img--bg {
+      background: dodgerblue;
       width: 150%;
       position: absolute;
       bottom: 0;
       z-index: 0; }
     .act_first .act_first_container .img--puit {
       width: 40%;
+      left: 160%;
+      position: absolute;
+      bottom: 10px;
+      opacity: 0;
+      z-index: 1; }
+    .act_first .act_first_container .img--smoke {
+      width: 8%;
       left: 160%;
       position: absolute;
       bottom: 10px;
@@ -37,24 +42,60 @@ body {
       bottom: 10px;
       opacity: 1;
       z-index: 1; }
+    .act_first .act_first_container .img--working {
+      width: 7%;
+      left: 160%;
+      position: absolute;
+      bottom: 10px;
+      opacity: 0;
+      z-index: 1; }
     .act_first .act_first_container .story-text--container {
       position: absolute;
-      font-family: Arial;
+      font-family: Roboto;
+      font-weight: bold;
+      color: #FFFFFF;
       width: 50%;
       box-sizing: border-box;
-      color: #000;
       left: 50%;
-      bottom: 700px;
+      bottom: 39vw;
       opacity: 0;
       z-index: 1; }
       .act_first .act_first_container .story-text--container .number_holder {
         display: inline-block;
-        font-size: 24px;
+        font-size: 50px;
         font-weight: bold; }
       .act_first .act_first_container .story-text--container .story_text {
         position: relative;
         top: 5px;
         display: inline-block;
-        font-size: 16px; }
+        font-size: 30px; }
+    .act_first .act_first_container .leaf_container .img--leaf {
+      position: absolute;
+      width: 70%;
+      bottom: 0;
+      z-index: 3; }
+    .act_first .act_first_container .leaf_container .left {
+      left: -70%; }
+    .act_first .act_first_container .leaf_container .right {
+      right: -70%; }
+    .act_first .act_first_container .comunity-case_container {
+      position: absolute;
+      left: 50%;
+      bottom: 50%;
+      width: 0;
+      height: 0;
+      background: #7c5d26;
+      opacity: 1;
+      z-index: 3; }
+      .act_first .act_first_container .comunity-case_container .img--case {
+        position: absolute;
+        width: 0;
+        left: -25; }
+      .act_first .act_first_container .comunity-case_container .img--hand {
+        position: absolute;
+        opacity: 0;
+        bottom: 25vw;
+        width: 25%;
+        left: -25%; }
 
 /*# sourceMappingURL=style.css.map */
