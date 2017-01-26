@@ -2,53 +2,35 @@ body {
   height: 3000px; }
 
 .act_first {
-  display: flex;
+  margin-top: 1000px;
   height: 300px;
-  overflow-x: hidden; }
-  .act_first .img-side {
-    width: 50%;
-    position: relative;
-    z-index: 1; }
-  .act_first .img-bg {
-    width: 100%;
-    position: absolute;
-    z-index: 0;
-    height: 300px; }
-
-.test {
-  background: green;
-  height: 500px;
-  width: 100%; }
-
-.act_second {
-  display: flex;
-  height: 800px;
-  overflow-x: hidden; }
-  .act_second .img-side {
-    width: 50%;
-    position: relative;
-    z-index: 1; }
-  .act_second .img-bg {
-    width: 100%;
-    position: absolute;
-    z-index: 0;
-    height: 300px; }
-
-.text--appear {
   position: relative;
-  right: 300px;
-  opacity: 1; }
-
-.img--visible {
-  position: absolute;
-  width: 10%;
-  left: 30%;
-  opacity: 1; }
-
-.img--not-visible {
-  position: absolute;
-  width: 10%;
-  left: 30%;
-  opacity: 0; }
+  display: block; }
+  .act_first .act_first_container {
+    position: relative; }
+    .act_first .act_first_container .img--boy {
+      width: 7%;
+      position: absolute;
+      bottom: 0;
+      z-index: 1; }
+    .act_first .act_first_container .img--bg {
+      width: 150%;
+      position: absolute;
+      bottom: 0;
+      z-index: 0; }
+    .act_first .act_first_container .img--puit {
+      width: 40%;
+      left: 160%;
+      position: absolute;
+      bottom: 10px;
+      opacity: 0;
+      z-index: 1; }
+    .act_first .act_first_container .img--worker {
+      width: 7%;
+      left: 160%;
+      position: absolute;
+      bottom: 10px;
+      opacity: 1;
+      z-index: 1; }
 
 /*# sourceMappingURL=style.css.map */
