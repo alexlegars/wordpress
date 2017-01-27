@@ -4,8 +4,6 @@
      */
     get_header();
 ?>
-
-
 <div class="burgerMenu showPhone">
      <ul>
           <li><a href="#area2">L'association</a></li>
@@ -64,9 +62,21 @@
                </div>
                <!-- <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/css/images/herbe.png" alt="" class="herbe"> -->
           </div>
-          <div class="cache"></div>
+          <div class="cache">
+               <div class="act_first">
+                    <div class="act_first_container">
+                         <img class="img--sun" src="<?php echo get_stylesheet_directory_uri() ?>/assets/css/images/scene1/sun.svg" alt="">
+                         <img id="step1" class="img--boy" src="<?php echo get_stylesheet_directory_uri() ?>/assets/css/images/scene1/boy-1.svg" alt="">
+                         <img class="img--bg" id="bg" src="<?php echo get_stylesheet_directory_uri() ?>/assets/css/images/scene1/paysage.svg">
+                         <img class="img--puit" src="<?php echo get_stylesheet_directory_uri() ?>/assets/css/images/scene1/puit.svg" alt="">
+                         <img class="img--worker" src="<?php echo get_stylesheet_directory_uri() ?>/assets/css/images/scene1/worker-1.svg" alt="">
+                         <div class="story-text--container">
+                              <span class="number_holder">01</span><p class="story_text">Mamadou avait mal aux dents sa maman lui dit mon doudou ...</p>
+                         </div>
+                    </div>
+               </div>
+          </div>
      </div>
-
 
     <?php
     $args = array(
@@ -74,67 +84,60 @@
         'post_per_page'      => 1,
         'post_status'    => 'publish',
     );
-    $objectifs = new WP_Query($args);
+    $association = new WP_Query($args);
 
     ?>
+    <?php while ($association->have_posts()) : $association->the_post(); ?>
 
-     <!--ASSOCIATION-->
-     <div class="association" id="area2">
-          <p class="title">Quelques mots <br>sur l'association</p>
-          <div class="content-association">
-               <p class="description">
-                    A-Prendre en main est une association de loi 1901 dont l’objet est de promouvoir et soutenir l’aide au développement économique et social des populations défavorisées en prônant leur —autonomie—. Les projets menés auront pour ambition de favoriser l’éducation des jeunes et/ou de participer à l’essor socio-économique des populations. <br>
-                    <br>Elle a été créée en Janvier 2016 à l’initiative de Loïc Basseeck, Cédric Tchamen et Fabien Buchet.
-               </p>
-          </div>
-          <div class="words cf showDesktop">
-               <p class="entire">valeurs</p>
-               <div class="right">
-                    <p class="one">Partage</p>
-                    <p class="two">Respect</p>
-                    <p class="three">Diversité</p>
-                    <p class="four">Volonté d'aider</p>
-               </div>
-          </div>
-     </div>
+         <!--ASSOCIATION-->
+         <div class="association" id="area2">
+              <p class="title"><?php the_field('block_one_title') ?></p>
+              <div class="content-association">
+                   <p class="description"><?php the_field('block_one_description') ?></p>
+              </div>
+              <div class="words cf showDesktop">
+                   <p class="entire">valeurs</p>
+                   <div class="right">
+                        <p class="one"><?php the_field('valeur_one') ?></p>
+                        <p class="two"><?php the_field('valeur_two') ?></p>
+                        <p class="three"><?php the_field('valeur_three') ?></p>
+                        <p class="four"><?php the_field('valeur_four') ?></p>
+                   </div>
+              </div>
+         </div>
 
-     <!--APPROCHE-->
-     <div class="approche" id="area3">
-          <div class="content-approche cf">
-               <div class="left">
-                    <p class="title">L'approche <br> A-prendre en main</p>
-                    <div class="trait-jaune"></div>
-                    <div class="textblock">
-                         <p class="subtitle">Autonomie des populations</p>
-                         <p class="description">
-                              En plus du financement de la mise en place des projets, les populations bénéficiaires seront formées et accompagnées pour établir une organisation autour du projet au-delà de notre intervention : pour qu’elles se l’approprient pleinement et qu’elles disposent de moyens pour en assurer la pérennité.
-                         </p>
-                    </div>
-               </div>
-               <div class="right">
-                    <div class="textblock textblock1">
-                         <p class="subtitle">Développement</p>
-                         <p class="description">
-                              Nous voulons encourager une dynamique localedans laquelle les populations disposent d’un environnement favorable pour développer une activité économique, sociale et éducative. Chaque personne pourra ainsi avoir la possibilité de se prendre en main.
-                         </p>
-                    </div>
-                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/css/images/enfant-approche.jpg" alt="" class="enfant">
-                    <div class="textblock textblock2">
-                         <p class="subtitle">Implication locale</p>
-                         <p class="description">
-                              Nous avons à cœur d’impliquer dès le début de nos projets les populations bénéficiaires en leur qualité d’usagers : Leur mobilisation et leur participation permet de les responsabiliser face à la prise en charge de leur besoin et participe à la réussite du projet.
-                         </p>
-                    </div>
-               </div>
-          </div>
-     </div>
+         <!--APPROCHE-->
+         <div class="approche" id="area3">
+              <div class="content-approche cf">
+                   <div class="left">
+                        <p class="title"><?php the_field('block_two_title') ?></p>
+                        <div class="trait-jaune"></div>
+                        <div class="textblock">
+                             <p class="subtitle"><?php the_field('blocke_two_subtitlte_two') ?></p>
+                             <p class="description"><?php the_field('blocke_two_description_two') ?></p>
+                        </div>
+                   </div>
+                   <div class="right">
+                        <div class="textblock textblock1">
+                             <p class="subtitle"><?php the_field('blocke_two_subtitlte_one') ?></p>
+                             <p class="description"><?php the_field('blocke_two_description_one') ?></p>
+                        </div>
+                        <img src="<?php the_post_thumbnail_url() ?> " alt="" class="enfant">
+                        <div class="textblock textblock2">
+                             <p class="subtitle"><?php the_field('blocke_two_subtitlte_three') ?></p>
+                             <p class="description"><?php the_field('blocke_two_description_three') ?></p>
+                        </div>
+                   </div>
+              </div>
+         </div>
+    <?php endwhile;?>
 
      <!--CROWDFOUNDING-->
      <div class="crowd cf" id="area4">
           <div class="left">
                <div class="textblock">
                     <p class="title">Grâce à vous, <br> nous pouvons y croire !</p>
-                    <button class="btnBleu showDesktop">Participer à l'aventure</button>
+                    <button class="btnBleu showDesktop"><a href="#">Participer à l'aventure</a></button>
                </div>
           </div>
           <div class="right">
@@ -148,7 +151,7 @@
                     </p>
                </div>
           </div>
-          <button class="btnBleu showPhone">Participer à l'aventure</button>
+          <button class="btnBleu showPhone"><a href="#">Participer à l'aventure</a></button>
           <p class="somme showDesktop">23 638€</p>
      </div>
 
@@ -164,36 +167,37 @@
     ?>
 
     <?php while ($objectifs->have_posts()) : $objectifs->the_post(); ?>
-     <div class="objectif" id="area5">
-          <img src="<?php the_post_thumbnail_url() ?>" alt="" class="imgDon">
-          <div class="content-objectif cf">
-               <div class="left">
-                    <div class="textblock">
-                         <p class="objectifMois"><?php the_field('objectif_date') ?></p>
-                         <p class="title"><?php the_field('objectif_title') ?></p>
-                         <p class="subtitle"><?php the_field('objectif_subtitle') ?></p>
-                         <p class="description"><?php the_field('objectif_description') ?></p>
-                    </div>
-               </div>
-               <div class="right">
-                    <div class="textblock">
-                         <div class="text text1">
-                              <span>01</span>
-                              <p><?php the_field('objectif_one') ?></p>
-                         </div>
-                         <div class="text text2">
-                              <span>02</span>
-                              <p><?php the_field('objectif_two') ?></p>
-                         </div>
-                         <div class="text text3">
-                              <span>03</span>
-                              <p><?php the_field('objectif_three') ?></p>
-                         </div>
-                    </div>
-               </div>
-          </div>
-     </div>
+         <div class="objectif" id="area5">
+              <img src="<?php the_post_thumbnail_url() ?>" alt="" class="imgDon">
+              <div class="content-objectif cf">
+                   <div class="left">
+                        <div class="textblock">
+                             <p class="objectifMois"><?php the_field('objectif_date') ?></p>
+                             <p class="title"><?php the_field('objectif_title') ?></p>
+                             <p class="subtitle"><?php the_field('objectif_subtitle') ?></p>
+                             <p class="description"><?php the_field('objectif_description') ?></p>
+                        </div>
+                   </div>
+                   <div class="right">
+                        <div class="textblock">
+                             <div class="text text1">
+                                  <span>01</span>
+                                  <p><?php the_field('objectif_one') ?></p>
+                             </div>
+                             <div class="text text2">
+                                  <span>02</span>
+                                  <p><?php the_field('objectif_two') ?></p>
+                             </div>
+                             <div class="text text3">
+                                  <span>03</span>
+                                  <p><?php the_field('objectif_three') ?></p>
+                             </div>
+                        </div>
+                   </div>
+              </div>
+         </div>
     <?php endwhile;?>
+
 
      <!--EQUIPE-->
      <div class="equipe" id="area6">
@@ -206,11 +210,11 @@
                        'post_type'      => 'team',
                        'post_status'    => 'publish',
                    );
-                   $actus = new WP_Query($args);
+                   $equipe = new WP_Query($args);
 
                    ?>
 
-                   <?php while ($actus->have_posts()) : $actus->the_post(); ?>
+                   <?php while ($equipe->have_posts()) : $equipe->the_post(); ?>
                         <li class="cf">
                              <div class="left">
                                   <img src="<?php the_post_thumbnail_url() ?>" alt="">
@@ -236,58 +240,46 @@
           <div class="content-actu">
                <p class="title">Dernières actualités  <br>A-lire</p>
                <div class="all-img cf">
+
+                    <?php
+                    $args = array(
+                       'post_type'      => 'actualite',
+                        'post_per_page'      => 3,
+                        'post_status'    => 'publish',
+                    );
+                    $actualite = new WP_Query($args);
+
+                    ?>
+
+                    <?php while ($actualite->have_posts()) : $actualite->the_post(); ?>
+
                     <div class="content-img">
-                         <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/css/images/img-actu3.jpg" alt="">
+                         <img src="<?php the_post_thumbnail_url() ?>" alt="">
                          <div class="cache">
                               <div class="textblock">
-                                   <p class="titre">Les enfants</p>
-                                   <br>
-                                   <p class="titre">et l'école</p>
-                                   <p class="date">Le 25 janv. 2017</p>
+                                   <p class="titre"><?php the_field('actu_title') ?></p>
+                                   <p class="date">Le <?php the_field('date') ?></p>
                                    <p class="lire">Lire l'article</p>
                               </div>
                          </div>
                     </div>
-                    <div class="content-img">
-                         <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/css/images/img-actu2.jpg" alt="">
-                         <div class="cache">
+                    <!--MODALES ACTU-->
+                    <div class="modale-actu">
+                         <div class="close">X</div>
+                         <div class="content-modale">
+                              <img src="<?php the_post_thumbnail_url() ?>" alt="">
                               <div class="textblock">
-                                   <p class="titre">Une ressource</p>
-                                   <br>
-                                   <p class="titre">vitale pour tous</p>
-                                   <p class="date">Le 15 janv. 2017</p>
-                                   <p class="lire">Lire l'article</p>
+                                   <p class="date"><?php the_field('date') ?></p>
+                                   <p class="title"><?php the_field('actu_title') ?></p>
+                                   <p class="article mollo"><?php the_field('actu_description')?></p>
                               </div>
                          </div>
                     </div>
-                    <div class="content-img">
-                         <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/css/images/img-actu1.jpg" alt="">
-                         <div class="cache">
-                              <div class="textblock">
-                                   <p class="titre">Les récoltes</p>
-                                   <br>
-                                   <p class="titre">à Douala !</p>
-                                   <p class="date">Le 27 sept. 2016</p>
-                                   <p class="lire">Lire l'article</p>
-                              </div>
-                         </div>
-                    </div>
+                    <? endwhile; ?>
                </div>
           </div>
           <!--MODALES ACTU-->
-          <div class="modale-actu">
-               <div class="close">X</div>
-               <div class="content-modale">
-                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/css/images/img-modale.jpg" alt="">
-                    <div class="textblock">
-                         <p class="date">25 janv. 2017</p>
-                         <p class="title">Une ressource vitale pour tous</p>
-                         <p class="article">
-                              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-                         </p>
-                    </div>
-               </div>
-          </div>
+
      </div>
 
      <!--CONTACT-->
@@ -298,11 +290,22 @@
           </div>
      </div>
 
+    <?php
+    $args = array(
+        'post_type'      => 'footer',
+        'post_per_page'      => 1,
+        'post_status'    => 'publish',
+    );
+    $footer = new WP_Query($args);
+
+    ?>
+    <?php while ($footer->have_posts()) : $footer->the_post(); ?>
+
      <!--FOOTER-->
      <div class="footer">
           <div class="content-footer cf">
                <div class="left">
-                    <p class="title">Nos partenaires</p>
+                    <p class="title"><?php the_field('title_one') ?></p>
                     <div class="content-img">
                          <div class="deuxImg cf">
                               <a href="http://www.attineos.com/" target="_blank" class="attineos"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/css/images/attineos.png" alt=""></a>
@@ -313,29 +316,42 @@
                </div>
                <div class="right cf">
                     <div class="follow">
-                         <p class="title">Suivez-nous</p>
+                         <p class="title"><?php the_field('title_two') ?></p>
                          <div class="reseaux">
-                              <a href="https://www.facebook.com/Aprendreenmain/" target="_blank">Facebook</a>
-                              <a href="#" target="_blank">Instagram</a>
+                              <a href="<?php the_field('link_social_one') ?>" target="_blank"><?php the_field('social_one') ?></a>
+                              <a href="<?php the_field('link_social_two') ?>" target="_blank"><?php the_field('social_two') ?></a>
                          </div>
                     </div>
                     <div class="infos">
-                         <p class="title">Informations</p>
+                         <p class="title"><?php the_field('title_three') ?></p>
                          <ul>
-                              <li>contact@a-prendre-en-main.org</li>
-                              <li>+33 06 89 34 89 80</li>
-                              <li>6 rue des Portes Blanches,</li>
-                              <li>75018  Paris</li>
+                              <li><?php the_field('mail') ?></li>
+                              <li><?php the_field('telephone') ?></li>
+                              <li><?php the_field('rue') ?></li>
+                              <li><?php the_field('ville_cp') ?></li>
                          </ul>
                     </div>
                </div>
                <p class="copyright">Copyright © A-prendre en main</p>
           </div>
      </div>
+    <?php endwhile; ?>
 
 </div>
 
 <div class="bg-noir"></div>
+
+<!--<script src="ressources/js/jquery-1.10.2.min.js"></script>-->
+<!--<script src="ressources/js/jquery.gsap.min.js"></script>-->
+<!--<script src="ressources/js/TimelineMax.min.js"></script>-->
+<!--<script src="ressources/js/TweenMax.min.js"></script>-->
+<!--<script src="ressources/js/jquery.bxslider.min.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.min.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/TextPlugin.min.js"></script>-->
+<!--<script src="ressources/js/default.js"></script>-->
+
 
 <?php
     /**

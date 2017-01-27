@@ -26,7 +26,7 @@ html{
 
 body{
   margin: 0;
-  /*background-image: url('../images/bg-body.jpg');*/
+  /*background-image: url('images/bg-body.jpg');*/
   font-family: 'Roboto', sans-serif;
   padding-bottom: 30px;
   overflow-x: hidden;
@@ -64,7 +64,7 @@ a{
 
 
 .btnBleu{
-  background-color: #084797;
+  background-color: transparent;
   border: 2px solid #084797;
   outline: none;
   color: #fff;
@@ -72,10 +72,15 @@ a{
   padding: 8px 50px;
   margin-top: 70px;
   cursor: pointer;
+  background-size: 300% 200%;
+  -webkit-transition: background-position 0.7s;
+  -moz-transition: background-position 0.7s;
+  transition: background-position 0.7s;
+  background-image: linear-gradient(to left, transparent 50%, #084797 50%);
 }
 
 .btnBleu:hover{
-  background-color: transparent;
+  background-position: 100% 0;
 }
 
 .bg-noir{
@@ -192,7 +197,7 @@ a{
   width: 40%;
   height: 100%;
   position: relative;
-  background-image: url('../images/paysage-banniere.png');
+  background-image: url('images/paysage-banniere.png');
   background-repeat: no-repeat;
   background-position: center;
   float: right;
@@ -212,8 +217,6 @@ a{
 
 /*PARTIE CACHEE*/
 .parallaxe .cache{
-  height: 400px;
-  background-color: lightcoral;
   display: none;
 }
 
@@ -302,9 +305,9 @@ a{
 /*******************************************/
 .approche{
   width: 100%;
-  background-image: url('../images/bg-approche.png');
+  background-image: url('images/bg-approche.png');
   background-repeat: no-repeat;
-  background-position-y: center;
+  background-position-y: 120px;
   padding-bottom: 135px;
 }
 
@@ -422,8 +425,12 @@ a{
   margin-top: 35px;
 }
 
-.crowd .left .textblock button:hover{
-  color: #084797;
+.crowd .left .textblock button a{
+  color: #fff;
+}
+
+.crowd .left .textblock button:hover a{
+  color: #fff;
 }
 
 .crowd .right .textblock{
@@ -475,7 +482,7 @@ a{
 
 .objectif .content-objectif .left p.objectifMois{
   color: #e74c38;
-  font-size: 20;
+  font-size: 20px;
   font-weight: 900;
 }
 
@@ -705,7 +712,12 @@ a{
 }
 
 .actualites .content-actu .all-img .content-img:hover .cache{
-  display: block;
+  background-position: 0 100%;
+  background-size: 100% 200%;
+  -webkit-transition: background-position 0.8s;
+  -moz-transition: background-position 0.8s;
+  transition: background-position 0.8s;
+  background-image: linear-gradient(to bottom,  transparent 50%, rgba(75,164,107, 0.7) 50%);
 }
 
 .actualites .content-actu .all-img .cache{
@@ -713,15 +725,18 @@ a{
   height: 100%;
   position: absolute;
   top: 0;
-  background-color: rgba(75,164,107, 0.7);
   align-items: center;
-  display: none;
 }
 
 .actualites .content-actu .all-img .cache .textblock{
   margin-left: 7%;
   position: absolute;
   bottom: 20px;
+  display: none;
+}
+
+.actualites .content-actu .all-img .cache:hover .textblock{
+  display: block;
 }
 
 .actualites .content-actu .all-img .cache .titre{
@@ -808,7 +823,6 @@ a{
 /*****************************************/
 /**************BLOC CONTACT***************/
 /*****************************************/
-
 .screen-reader-response{
   display: none !important;
 }
@@ -920,7 +934,6 @@ a{
   color: #084797;
 }
 
-
 /***********************************/
 /**************FOOTER***************/
 /***********************************/
@@ -1015,7 +1028,7 @@ a{
 /*****************************************/
 /****************RESPONSIVE***************/
 /*****************************************/
-@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation:landscape){
+@media screen and (min-width: 768px) and (max-width: 1100px) and (orientation:landscape){
   .actualites .content-actu .all-img .cache {
     display: flex;
   }
@@ -1027,6 +1040,13 @@ a{
   .parallaxe .visible img.sansEau1{
     left: 50%;
     margin-left: -62px;
+    max-width: 127px;
+  }
+}
+
+@media screen and (min-width:768px) and (max-width:920px) and (orientation:landscape){
+  .header nav ul li{
+    padding: 22px 7px 19px;
   }
 }
 
@@ -1037,11 +1057,12 @@ a{
 
   .actualites .content-actu .all-img .content-img{
     width: 30%!important;
+    margin-left: 3%!important;
   }
 
   .approche{
     margin-top: 100px;
-    background-image: url('../images/bg-approche.png')!important;
+    background-image: url('images/bg-approche.png')!important;
     background-position-y: 240px;
     padding-bottom: 75px;
   }
@@ -1096,7 +1117,6 @@ a{
 
   .burgerMenu ul{
     padding-top: 50px;
-    width: 80%;
     margin: 0 auto;
     opacity: 0;
     display: none;
@@ -1107,10 +1127,18 @@ a{
     font-size: 25px;
     cursor: pointer;
     margin-top: 20px;
-    border-bottom: 1px solid #3CA968;
-    padding-bottom: 10px;
-    padding-top: 20px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    padding-left: 10%;
     font-weight: 900;
+  }
+
+  .burgerMenu ul li.don{
+    background-color: #3ca968;
+  }
+
+  .burgerMenu ul li.don a{
+    color: #fff;
   }
 
   .iconBurger{
@@ -1412,13 +1440,23 @@ a{
     margin-left: 0;
   }
 
-  .actualites .content-actu .all-img .cache {
-    display: flex;
+  .actualites .content-actu .all-img .cache{
+    background-color: rgba(75,164,107, 0.7);
+  }
+
+  .actualites .content-actu .all-img .cache .textblock{
+    display: block;
   }
 
   .actualites .content-actu .all-img .cache .titre{
-    font-size: 30px;
-    padding: 10px 15px 10px 10px;
+    font-size: 26px;
+    color: #333333 ;
+    font-weight: 900;
+    background-color: #fff;
+    margin-top: 5px;
+    padding: 8px;
+    line-height: 55px;
+    display: inline;
   }
 
   .actualites .content-actu .all-img .cache p.date{
@@ -1521,3 +1559,63 @@ a{
     line-height: 32px;
   }
 }
+
+
+/*************************************************/
+/****************ANIMATION PRALLAXE***************/
+/*************************************************/
+.act_first {
+  margin-top: 1000px;
+  height: 300px;
+  position: relative;
+  display: block; }
+.act_first .act_first_container {
+  position: relative; }
+.act_first .act_first_container .img--sun {
+  width: 7%;
+  position: absolute;
+  bottom: 700px;
+  z-index: 1; }
+.act_first .act_first_container .img--boy {
+  width: 7%;
+  position: absolute;
+  bottom: 0;
+  z-index: 1; }
+.act_first .act_first_container .img--bg {
+  width: 150%;
+  position: absolute;
+  bottom: 0;
+  z-index: 0; }
+.act_first .act_first_container .img--puit {
+  width: 40%;
+  left: 160%;
+  position: absolute;
+  bottom: 10px;
+  opacity: 0;
+  z-index: 1; }
+.act_first .act_first_container .img--worker {
+  width: 7%;
+  left: 160%;
+  position: absolute;
+  bottom: 10px;
+  opacity: 1;
+  z-index: 1; }
+.act_first .act_first_container .story-text--container {
+  position: absolute;
+  font-family: Arial;
+  width: 50%;
+  box-sizing: border-box;
+  color: #000;
+  left: 50%;
+  bottom: 700px;
+  opacity: 0;
+  z-index: 1; }
+.act_first .act_first_container .story-text--container .number_holder {
+  display: inline-block;
+  font-size: 24px;
+  font-weight: bold; }
+.act_first .act_first_container .story-text--container .story_text {
+  position: relative;
+  top: 5px;
+  display: inline-block;
+  font-size: 16px; }

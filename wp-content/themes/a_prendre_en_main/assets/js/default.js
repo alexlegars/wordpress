@@ -123,64 +123,178 @@ function blocParallaxe(){
 }
 
 function sliderEquipe(){
+    var slidertl  = new TimelineMax();
+    var img       = jQuery('.equipe ul li .left img');
+    var textblock = jQuery('.equipe ul li .right .textblock');
+
     jQuery('.sliderEquipe').bxSlider({
-        mode:'fade'
+        // onSlideAfter: function(){
+        //   console.log("before");
+        //   jQuery('.equipe .bx-next').click(function() {
+        //     var left = jQuery('.equipe ul .left');
+        //     var right = jQuery('.equipe ul .right');
+        //     var tlSlider = new TimelineMax();
+        //
+        //     tlSlider.from(img, 0.2, {marginLeft: '50%'})
+        //     tlSlider.to(img, 0.2, {marginLeft: '0'})
+        //     tlSlider.from(textblock, 0.2, {marginLeft: '50%'})
+        //     tlSlider.to(textblock, 0.2, {marginLeft: '0'})
+        //   });
+        // },
+        //
+        // onSlideBefore: function() {
+        //   console.log("avant");
+        //   jQuery('.equipe .bx-next').click(function() {
+        //     var left = jQuery('.equipe ul .left');
+        //     var right = jQuery('.equipe ul .right');
+        //     var tlSlider = new TimelineMax();
+        //
+        //     tlSlider.from(img, 0.2, {marginLeft: '0'})
+        //     tlSlider.to(img, 0.2, {marginLeft: '-50%'})
+        //     tlSlider.from(textblock, 0.2, {marginLeft: '0'})
+        //     tlSlider.to(textblock, 0.2, {marginLeft: '-50%'})
+        //   });
+        // }
     });
     jQuery('.equipe .bx-controls-direction .bx-prev').html('Précédent')
     jQuery('.equipe .bx-controls-direction .bx-next').html('Suivant')
 
-    // jQuery('.equipe .bx-next').click(function() {
-    //   var left = jQuery('.equipe ul .left');
-    //   var right = jQuery('.equipe ul .right');
-    //   var tlSlider = new TimelineMax();
-    //
-    //   tlSlider.to(left, 0.7, {marginLeft: '-500px'})
-    //   tlSlider.to(right, 0.2, {marginLeft: '-500px'})
-    // });
+
 }
 
+/*
 function imagesPartenaires(){
     jQuery('.footer a.attineos img').mouseenter(function() {
-        jQuery(this).attr('src', 'ressources/images/attineosActive.png');
+        jQuery(this).attr('src', './css/images/attineosActive.png');
     });
     jQuery('.footer a.attineos img').mouseleave(function() {
-        jQuery(this).attr('src', 'ressources/images/attineos.png');
+        jQuery(this).attr('src', './css/images/attineos.png');
     });
 
     jQuery('.footer a.digitalVillage img').mouseenter(function() {
-        jQuery(this).attr('src', 'ressources/images/digitalVillageActive.png');
+        jQuery(this).attr('src', './css/images/digitalVillageActive.png');
     });
     jQuery('.footer a.digitalVillage img').mouseleave(function() {
-        jQuery(this).attr('src', 'ressources/images/digitalVillage.png');
+        jQuery(this).attr('src', './css/images/digitalVillage.png');
     });
 
     jQuery('.footer a.supMontpellier img').mouseenter(function() {
-        jQuery(this).attr('src', 'ressources/images/supMontpellierActive.png');
+        jQuery(this).attr('src', './css/images/supMontpellierActive.png');
     });
     jQuery('.footer a.supMontpellier img').mouseleave(function() {
-        jQuery(this).attr('src', 'ressources/images/supMontpellier.png');
+        jQuery(this).attr('src', './css/images/supMontpellier.png');
     });
 }
+*/
 
 function modaleActu(){
     var tlModale    = new TimelineMax();
     var modaleActu  = jQuery('.modale-actu');
 
-    jQuery('.actualites .cache p.lire').click(function() {
+    jQuery('.actualites .cache').click(function() {
         jQuery('.bg-noir').fadeIn();
         tlModale.to(modaleActu, 0.5, {left : '50%'});
         tlModale.play();
     });
 
     jQuery('.modale-actu .close').click(function() {
-        jQuery('.bg-noir').fadeOut();
+        jQuery('.bg-noir').fadeOut(800);
         tlModale.reverse();
     });
 
     jQuery('.bg-noir').click(function() {
-        jQuery(this).fadeOut();
+        jQuery(this).fadeOut(800);
         tlModale.reverse();
     });
+}
+
+function animationParallaxe(){
+    /**
+     * Created by Thib on 23/01/2017.
+     */
+
+    boySprite = [
+        './css/images/scene1/boy-1.svg',
+        './css/images/scene1/boy-2.svg',
+        './css/images/scene1/boy-3.svg',
+        './css/images/scene1/boy-2.svg'
+    ];
+
+    workerSprite = [
+        './css/images/scene1/worker-1.svg',
+        './css/images/scene1/worker-2.svg',
+        './css/images/scene1/worker-3.svg',
+        './css/images/scene1/worker-2.svg'
+    ];
+
+    var controller = new ScrollMagic.Controller();
+
+    //SCENE 1 TWEENS
+    var element = jQuery('.act_first');
+    var boySwap = new TimelineMax({repeat: 11});
+    boySwap
+        .set(element.find('.img--boy'), {attr: {src: boySprite[0]}}, 0)
+        .set(element.find('.img--boy'), {attr: {src: boySprite[1]}}, 100)
+        .set(element.find('.img--boy'), {attr: {src: boySprite[2]}}, 200)
+        .set(element.find('.img--boy'), {attr: {src: boySprite[3]}}, 300);
+
+    var scene1 = new TimelineMax();
+    scene1 .to(element.find('.story-text--container'), 500, {opacity:1}, 500)
+        .to(element.find('.story-text--container'), 500, {opacity:0}, 2250)
+        .set(element.find('.story-text--container .number_holder'), {text:'02'}, 3400)
+        .set(element.find('.story-text--container .story_text'), {text:'Wallah y a plus d\'eau chaude'}, 3400)
+        .to(element.find('.story-text--container'), 500, {opacity:1}, 3500)
+        .to(element.find('.story-text--container'), 500, {opacity:0}, 5000)
+        .set(element.find('.story-text--container .number_holder'), {text:'03'}, 6200)
+        .set(element.find('.story-text--container .story_text'), {text:'OMG l\'EAU EST TOUT CALCAIRE !!! LET THE MASTER DO, I\'m GONNA REPAIR THIS SHIT'}, 6200)
+        .to(element.find('.story-text--container'), 500, {opacity:1}, 6250)
+        .to(element.find('.story-text--container'), 500, {opacity:0}, 8000)
+        .to(element.find('.img--boy'), 1000, {left: '46%'}, 2000)
+        .to(element.find('.img--boy'), 500, {bottom: 50, width:'-=1%'}, 2500)
+        .to(element.find('.img--puit'), 500, {left:'40%'},1500)
+        .to(element.find('.img--puit'), 1000, {opacity: 1}, 4000);
+
+
+    var scene1Bg = new TimelineMax({repeat: 0});
+    scene1Bg
+        .to(element.find('.img--bg'), 4000, {right: '0%', ease:Linear.easeNone})
+        .to(element.find('.img--sun'), 8000, {left: '-5%', ease:Linear.easeNone}, 0);
+
+
+
+    //SCENE 2 TWEENS
+
+    var workerSwap = new TimelineMax({repeat: 22});
+    workerSwap
+        .set(element.find('.img--worker'), {attr: {src: workerSprite[0]}}, 0)
+        .set(element.find('.img--worker'), {attr: {src: workerSprite[1]}}, 100)
+        .set(element.find('.img--worker'), {attr: {src: workerSprite[2]}}, 200)
+        .set(element.find('.img--worker'), {attr: {src: workerSprite[3]}}, 300);
+
+    var scene2 = new TimelineMax();
+    scene2.to(element.find('.img--worker'), 1000, {left: '70%'}, 5000)
+        .to(element.find('.img--worker'), 1000, {bottom: 100, width:'-=1%'}, 6000);
+
+
+    scene1Final = new TimelineMax({repeat: 0});
+    scene1Final.add([boySwap, scene1Bg, scene1, scene2, workerSwap])
+
+
+
+    var sceneController = new ScrollMagic.Scene({
+        duration: 8000,
+        offset: -400,
+        reverse: true,
+        triggerElement: '.act_first'
+    })
+        .setPin('.act_first')
+        // .on('start', function() {
+        //     scene1Final.play();
+        // })
+        .setTween(scene1Final)
+        .addIndicators({name: "boy-walk"})
+        .addTo(controller);
+
 }
 
 
@@ -223,9 +337,14 @@ jQuery(document).ready(function() {
     nav();
     blocParallaxe();
     sliderEquipe();
-    imagesPartenaires();
+    // imagesPartenaires();
     modaleActu();
+    animationParallaxe();
 });
+
+
+
+
 
 
 
