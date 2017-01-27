@@ -1,5 +1,5 @@
 (function() {
-    var ululeAPI = "c";
+    var ululeAPI = "https://api.ulule.com/v1/projects/10-days-10-songs";
     $.getJSON( ululeAPI, {
         format: "json"
     })

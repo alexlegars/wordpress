@@ -2,11 +2,6 @@
 @import "_reset";
 @import "_mixins";
 
-#caca {
-  width: 30px;
-  height: 30px;
-  background: blue;
-}
 /***************************/
 /**********CLEARFIX**********/
 /***************************/
@@ -25,9 +20,13 @@
 /*************************************/
 /**************GENERAL****************/
 /*************************************/
+html{
+  position: relative;
+}
+
 body{
   margin: 0;
-  background-image: url('images/bg-body.jpg');
+  /*background-image: url('../images/bg-body.jpg');*/
   font-family: 'Roboto', sans-serif;
   padding-bottom: 30px;
   overflow-x: hidden;
@@ -79,6 +78,16 @@ a{
   background-color: transparent;
 }
 
+.bg-noir{
+  background-color: rgba(0,0,0, 0.6);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 20;
+  display: none;
+}
+
 /************************************/
 /**************HEADER****************/
 /************************************/
@@ -118,7 +127,7 @@ a{
 .header nav ul li{
   float: left;
   text-align: center;
-  padding: 22px 25px 19px;
+  padding: 22px 20px 19px;
 }
 
 .header nav ul li a{
@@ -150,9 +159,6 @@ a{
 /********************************************/
 .parallaxe .visible{
   height: 600px;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
   background-color: #3ca968;
   position: relative;
 }
@@ -161,6 +167,8 @@ a{
   width: 50%;
   padding-left: 130px;
   z-index: 2;
+  float: left;
+  margin-top: 120px;
 }
 
 .parallaxe .visible .textblock p{
@@ -184,9 +192,10 @@ a{
   width: 40%;
   height: 100%;
   position: relative;
-  background-image: url('images/paysage-banniere.png');
+  background-image: url('../images/paysage-banniere.png');
   background-repeat: no-repeat;
   background-position: center;
+  float: right;
 }
 
 .parallaxe .visible img.sansEau1{
@@ -219,7 +228,7 @@ a{
 .association .content-association{
   width: 80%;
   margin: 0 auto;
-  border-left: 10px solid #004499;
+  border-left: 5px solid #004499;
 }
 
 .association p.title{
@@ -228,7 +237,7 @@ a{
 }
 
 .association .content-association p.description{
-  font-size: 16px;
+  font-size: 15px;
   color: #474646;
   width: 80%;
   padding-left: 30px;
@@ -293,7 +302,7 @@ a{
 /*******************************************/
 .approche{
   width: 100%;
-  background-image: url('images/bg-approche.png');
+  background-image: url('../images/bg-approche.png');
   background-repeat: no-repeat;
   background-position-y: center;
   padding-bottom: 135px;
@@ -321,11 +330,6 @@ a{
 
 .approche .left{
   float: left;
-}
-
-.approche .left .title,
-.approche .left .trait-jaune{
-  margin-left: 50px;
 }
 
 .approche .left .title{
@@ -361,6 +365,7 @@ a{
 
 .approche .right img.enfant{
   margin-top: 145px;
+  width: 100%;
 }
 
 .approche .right .textblock2{
@@ -573,7 +578,7 @@ a{
 
 .equipe .bx-controls-direction a{
   text-indent: 0;
-  font-size: 20px;
+  font-size: 18px;
   color: #474646;
   font-weight: 900;
 }
@@ -614,7 +619,8 @@ a{
 }
 
 .equipe ul li .left img{
-  width: 90%;
+  width: 70%;
+  margin-top: 30px;
 }
 
 .equipe ul li .right{
@@ -633,27 +639,27 @@ a{
 }
 
 .equipe ul li .right .textblock .leftBorder p.name{
-  font-size: 40px;
+  font-size: 30px;
   color: #474646;
   font-weight: 900;
 }
 
 .equipe ul li .right .textblock .leftBorder p.role{
-  font-size: 25px;
+  font-size: 20px;
   color: #313131;
   font-weight: 900;
   margin-top: 40px;
 }
 
 .equipe ul li .right .textblock .leftBorder p.parcours{
-  font-size: 18px;
+  font-size: 15px;
   color: #313131;
   font-weight: 300;
   margin-top: 20px;
 }
 
 .equipe ul li .right .textblock p.participation{
-  font-size: 18px;
+  font-size: 15px;
   color: #313131;
   font-weight: 300;
   margin-top: 20px;
@@ -667,6 +673,7 @@ a{
 .actualites{
   width: 100%;
   margin-top: 205px;
+  position: relative;
 }
 
 .actualites .content-actu{
@@ -675,26 +682,22 @@ a{
 }
 
 .actualites .content-actu .title{
-  font-weight: 900;
+  border-left: 5px solid #3ca968;
+  padding-left: 30px;
+  padding-bottom: 20px;
 }
 
 .actualites .content-actu .all-img{
-  margin-top: 50px;
-}
-
-.actualites .content-actu .all-img .left{
-  float: left;
-}
-
-.actualites .content-actu .all-img .right{
-  float: right;
+  margin-top: 30px;
 }
 
 .actualites .content-actu .all-img .content-img{
   position: relative;
   cursor: pointer;
   margin-bottom: 30px;
-  width: 48%;
+  float: left;
+  width: 30%;
+  margin-left: 3%;
 }
 
 .actualites .content-actu .all-img .content-img img{
@@ -702,7 +705,7 @@ a{
 }
 
 .actualites .content-actu .all-img .content-img:hover .cache{
-  display: flex;
+  display: block;
 }
 
 .actualites .content-actu .all-img .cache{
@@ -710,31 +713,96 @@ a{
   height: 100%;
   position: absolute;
   top: 0;
-  background-color: rgba(245,245,245, 0.7);
-  display: flex;
+  background-color: rgba(75,164,107, 0.7);
   align-items: center;
   display: none;
 }
 
-.actualites .content-actu .all-img .cache .content-titre{
+.actualites .content-actu .all-img .cache .textblock{
   margin-left: 7%;
+  position: absolute;
+  bottom: 20px;
 }
 
 .actualites .content-actu .all-img .cache .titre{
-  font-size: 40px;
+  font-size: 26px;
   color: #333333;
   font-weight: 900;
   background-color: #fff;
   margin-top: 5px;
-  padding: 15px 20px 15px 15px;
+  padding: 8px;
+  line-height: 22px;
+  display: inline-block;
 }
 
 .actualites .content-actu .all-img .cache p.date{
+  font-size: 12px;
+  color: #fff;
+  font-weight: 300;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.actualites .content-actu .all-img .cache p.lire{
+  font-size: 15px;
+  font-weight: 900;
+  color: #fff;
+}
+
+
+/*****************************************/
+/**************MODALES ACTU***************/
+/*****************************************/
+.modale-actu{
+  width: 100%;
+  margin: 0 auto;
+  background-color: #fff;
   position: absolute;
-  bottom: 20px;
-  right: 20px;
-  font-size: 18px;
-  color: #474646;
+  top: 5%;
+  left: -100%;
+  margin-left: -50%;
+  z-index: 21;
+  padding-bottom: 145px;
+  /*display: none;*/
+}
+
+.modale-actu .close{
+  text-align: right;
+  font-size: 25px;
+  color: #aeaeae;
+  font-weight: 100;
+  margin: 30px 30px 0;
+  cursor: pointer;
+}
+
+.modale-actu .content-modale{
+  width: 90%;
+  margin: 30px auto 0;
+}
+
+.modale-actu .content-modale img{
+  width: 70%;
+}
+
+.modale-actu .content-modale .textblock{
+  margin-top: 110px;
+}
+
+.modale-actu .content-modale .textblock p.date{
+  font-size: 15px;
+  color: #373737;
+}
+
+.modale-actu .content-modale .textblock p.title{
+  margin-top: 45px;
+}
+
+.modale-actu .content-modale .textblock p.article{
+  font-size: 15px;
+  color: #868686;
+  line-height: 30px;
+  font-weight: 100;
+  margin-top: 55px;
 }
 
 /*****************************************/
@@ -852,6 +920,7 @@ a{
   color: #084797;
 }
 
+
 /***********************************/
 /**************FOOTER***************/
 /***********************************/
@@ -938,11 +1007,10 @@ a{
 
 .footer .copyright{
   text-align: center;
-  font-size: 14px;
+  font-size: 12px;
   clear: both;
   padding: 50px 0;
 }
-
 
 /*****************************************/
 /****************RESPONSIVE***************/
@@ -950,6 +1018,32 @@ a{
 @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation:landscape){
   .actualites .content-actu .all-img .cache {
     display: flex;
+  }
+
+  .header .content-logo p{
+    display: none;
+  }
+
+  .parallaxe .visible img.sansEau1{
+    left: 50%;
+    margin-left: -62px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation:portrait){
+  .parallaxe .visible .textblock{
+    margin-top: 110px!important;
+  }
+
+  .actualites .content-actu .all-img .content-img{
+    width: 30%!important;
+  }
+
+  .approche{
+    margin-top: 100px;
+    background-image: url('../images/bg-approche.png')!important;
+    background-position-y: 240px;
+    padding-bottom: 75px;
   }
 }
 
@@ -986,11 +1080,10 @@ a{
 
   .burgerMenu{
     background-color: #fff;
-    width: 100%;
+    width: 0;
     height: 100%;
     position: fixed;
     top: 0;
-    display: none;
     z-index: 3;
   }
 
@@ -1005,6 +1098,8 @@ a{
     padding-top: 50px;
     width: 80%;
     margin: 0 auto;
+    opacity: 0;
+    display: none;
   }
 
   .burgerMenu ul li{
@@ -1015,12 +1110,13 @@ a{
     border-bottom: 1px solid #3CA968;
     padding-bottom: 10px;
     padding-top: 20px;
+    font-weight: 900;
   }
 
   .iconBurger{
     width: 30px;
     margin-left: 10px;
-    padding-top: 20px;
+    padding-top: 8px;
     position: relative;
     z-index: 3;
     cursor: pointer;
@@ -1046,9 +1142,9 @@ a{
 
   .iconBurger div{
     width: 100%;
-    height: 2px;
-    margin-top: 5px;
-    background-color: #000;
+    height: 4px;
+    margin-top: 6.5px;
+    background-color: #3ca968;
   }
 
   .iconBurger div:first-child{
@@ -1064,8 +1160,8 @@ a{
 
   .parallaxe .visible .textblock{
     width: 90%;
-    padding-left: 0;
-    margin: 0 auto;
+    padding-left: 30px;
+    margin-top: 80px;
   }
 
   .parallaxe .visible .textblock p.discover{
@@ -1113,6 +1209,54 @@ a{
     font-weight: 300;
   }
 
+  /***************************************/
+  /****************APPROCHE***************/
+  /***************************************/
+  .approche{
+    margin-top: 100px;
+    background-image: none;
+    padding-bottom: 75px;
+  }
+
+  .approche .content-approche .left,
+  .approche .content-approche .right{
+    float: none;
+    width: 100%;
+  }
+
+  .approche .left .trait-jaune{
+    margin-top: 25px;
+  }
+
+  .approche .left .textblock{
+    margin-top: 70px;
+  }
+
+  .approche p.subtitle{
+    font-size: 20px;
+  }
+
+  .approche .left .textblock .description,
+  .approche .right .textblock .description{
+    margin-top: 25px;
+  }
+
+  .approche .right .textblock1{
+    margin-top: 75px;
+  }
+
+  .approche .right img.enfant{
+    margin-top: 65px;
+  }
+
+  .approche .right .textblock2{
+    margin-top: 75px;
+  }
+
+  .approche .right .textblock2 p.description{
+    margin-top: 25px;
+  }
+
   /************************************/
   /****************CROWD***************/
   /************************************/
@@ -1144,11 +1288,45 @@ a{
     margin: 20px auto 0;
   }
 
+  /***************************************/
+  /****************OBJECTIF***************/
+  /***************************************/
+  .objectif .content-objectif{
+    margin: 90px auto 0;
+  }
+  .objectif .content-objectif .left,
+  .objectif .content-objectif .right{
+    float: none;
+    width: 100%;
+  }
+
+  .objectif .content-objectif .left p.subtitle{
+    border-right: none;
+  }
+
+  .objectif .content-objectif .left p.subtitle{
+    padding-top: 30px;
+  }
+
+  .objectif .content-objectif .left p.description{
+    margin-top: 55px;
+  }
+
+  .objectif .content-objectif .right .textblock{
+    width: 100%;
+    text-align: right;
+  }
+
+  .objectif .content-objectif .right .text p{
+    font-size: 18px;
+    line-height: 30px;
+  }
+
   /*************************************/
   /****************EQUIPE***************/
   /*************************************/
   .equipe{
-    margin-top: 50px;
+    margin-top: 120px;
     padding-bottom: 40px;
   }
 
@@ -1160,6 +1338,11 @@ a{
   .equipe ul li .right{
     float: none;
     width: 100%;
+  }
+
+  .equipe ul li .left{
+    width: 50%;
+    margin: 0 auto;
   }
 
   .equipe ul li .left img {
@@ -1226,6 +1409,7 @@ a{
 
   .actualites .content-actu .all-img .content-img{
     width: 100%;
+    margin-left: 0;
   }
 
   .actualites .content-actu .all-img .cache {
@@ -1243,6 +1427,29 @@ a{
     bottom: 10px;
   }
 
+  /******************************************/
+  /****************MODALE ACTU***************/
+  /******************************************/
+  .modale-actu .content-modale img{
+    width: 100%;
+  }
+
+  .modale-actu .content-modale .textblock{
+    margin-top: 50px;
+  }
+
+  .modale-actu .content-modale .textblock p.date{
+    font-size: 12px;
+  }
+
+  .modale-actu .content-modale .textblock p.title{
+    margin-top: 45px;
+  }
+
+  .modale-actu .content-modale .textblock p.article{
+    margin-top: 15px;
+  }
+
   /**************************************/
   /****************CONTACT***************/
   /**************************************/
@@ -1250,7 +1457,7 @@ a{
     padding-bottom: 130px;
   }
   .contact .content-contact{
-    width: 85%;
+    width: 90%;
   }
 
   .contact .content-contact form input[name="name"]{
